@@ -1,0 +1,322 @@
+/* ========================================
+   ASIDE MENU - NAVEGAÇÃO LATERAL FIXA
+   ======================================== */
+
+.aside-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 280px;
+  background: var(--bg-primary);
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+.aside-menu.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .aside-menu {
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.aside-nav {
+  width: 100%;
+  padding: 2rem 1.5rem;
+}
+
+.aside-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aside-nav-item {
+  position: relative;
+}
+
+/* ========================================
+   BOTÃO DE NAVEGAÇÃO
+   ======================================== */
+
+.aside-nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  overflow: hidden;
+}
+
+.aside-nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+  transform: scaleY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 4px 4px 0;
+}
+
+.aside-nav-link:hover {
+  background: var(--bg-secondary);
+  transform: translateX(4px);
+}
+
+.aside-nav-link:hover::before {
+  transform: scaleY(0.6);
+}
+
+/* ========================================
+   ESTADO ATIVO
+   ======================================== */
+
+.aside-nav-link.active {
+  background: var(--bg-accent);
+  transform: translateX(8px);
+}
+
+.aside-nav-link.active::before {
+  transform: scaleY(1);
+}
+
+.aside-nav-link.active .nav-link-text {
+  color: var(--primary);
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+/* ========================================
+   TEXTO DO LINK
+   ======================================== */
+
+.nav-link-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.3px;
+}
+
+.aside-nav-link:hover .nav-link-text {
+  color: var(--text-primary);
+}
+
+/* ========================================
+   INDICADOR ATIVO - CÍRCULO PONTILHADO
+   ======================================== */
+
+.active-indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.dotted-circle {
+  color: var(--primary);
+  animation: rotate-circle 8s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.4));
+}
+
+@keyframes rotate-circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animação de entrada do círculo */
+.active-indicator {
+  animation: fade-in-scale 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   RESPONSIVIDADE - TABLET
+   ======================================== */
+
+@media (max-width: 968px) {
+  .aside-menu {
+    width: 220px;
+  }
+
+  .aside-nav {
+    padding: 1.5rem 1rem;
+  }
+
+  .aside-nav-link {
+    padding: 0.875rem 1rem;
+  }
+
+  .nav-link-text {
+    font-size: 0.9375rem;
+  }
+
+  .active-indicator {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dotted-circle {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ========================================
+   RESPONSIVIDADE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Transformar aside lateral em navegação inferior fixa */
+  .aside-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    background: var(--bg-primary);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .aside-menu {
+      background: rgba(17, 24, 39, 0.98);
+      backdrop-filter: blur(20px);
+    }
+  }
+
+  .aside-nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .aside-nav-list {
+    flex-direction: row;
+    gap: 0.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .aside-nav-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .aside-nav-item {
+    flex-shrink: 0;
+  }
+
+  .aside-nav-link {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 80px;
+    border-radius: 8px;
+  }
+
+  .aside-nav-link::before {
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    width: 60%;
+    height: 3px;
+    transform: translateX(-50%) scaleX(0);
+    border-radius: 4px 4px 0 0;
+  }
+
+  .aside-nav-link:hover::before,
+  .aside-nav-link.active::before {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  .aside-nav-link:hover,
+  .aside-nav-link.active {
+    transform: translateX(0) translateY(-2px);
+  }
+
+  .nav-link-text {
+    font-size: 0.8125rem;
+    text-align: center;
+  }
+
+  .active-indicator {
+    width: 18px;
+    height: 18px;
+    order: -1;
+  }
+
+  .dotted-circle {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ========================================
+   MOBILE PEQUENO
+   ======================================== */
+
+@media (max-width: 375px) {
+  .aside-nav-link {
+    min-width: 70px;
+    padding: 0.625rem 0.75rem;
+  }
+
+  .nav-link-text {
+    font-size: 0.75rem;
+  }
+
+  .active-indicator {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dotted-circle {
+    width: 16px;
+    height: 16px;
+  }
+}

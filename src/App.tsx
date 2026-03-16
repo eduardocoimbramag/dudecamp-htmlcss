@@ -1,12 +1,23 @@
 import './App.css'
 import Hero from './components/Hero'
+import AsideMenu from './components/AsideMenu'
 
 function App() {
+  const menuItems = [
+    { id: 'features', label: 'Recursos' },
+    { id: 'about', label: 'Sobre' },
+    { id: 'cta', label: 'Chamada' },
+    { id: 'footer', label: 'Contato' },
+  ];
+
   return (
     <>
       <Hero />
 
-      <section id="features" className="features">
+      <AsideMenu menuItems={menuItems} />
+
+      <div className="main-content">
+        <section id="features" className="features">
         <div className="container">
           <div className="section-header">
             <h2></h2>
@@ -102,6 +113,7 @@ function App() {
           </div>
         </div>
       </footer>
+      </div>
     </>
   )
 }

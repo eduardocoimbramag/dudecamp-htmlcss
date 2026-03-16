@@ -1,3 +1,26 @@
+/* ========================================
+   LAYOUT PRINCIPAL COM ASIDE FIXO
+   ======================================== */
+
+.main-content {
+  margin-left: 280px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 968px) {
+  .main-content {
+    margin-left: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding-bottom: 80px;
+  }
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
