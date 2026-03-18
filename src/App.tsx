@@ -2,13 +2,78 @@ import './App.css'
 import Hero from './components/Hero'
 import AsideMenu from './components/AsideMenu'
 import SpotlightCard from './components/SpotlightCard'
+import ModuleFolder from './components/ModuleFolder'
 
 function App() {
   const menuItems = [
     { id: 'features', label: 'Recursos' },
     { id: 'about', label: 'Sobre' },
-    { id: 'cta', label: 'Chamada' },
+    { id: 'content', label: 'Conteúdo' },
     { id: 'footer', label: 'Contato' },
+  ];
+
+  const modulesData = [
+    {
+      number: 1,
+      title: 'Boas vindas',
+      duration: '1H',
+      topics: ['Apresentação', 'Download IDE', 'Extensões Necessárias']
+    },
+    {
+      number: 2,
+      title: 'Introdução ao HTML',
+      duration: '1H',
+      topics: [
+        'Criação de pastas e arquivos',
+        'Estrutura padrão de projeto',
+        'Como funciona um arquivo HTML',
+        'TAGS'
+      ]
+    },
+    {
+      number: 3,
+      title: 'TAGS',
+      duration: '2H',
+      topics: [
+        'Tags de texto',
+        'Tags de estruturação',
+        'Tags de mídia',
+        'Tags de formulário',
+        'Tags de formatação'
+      ]
+    },
+    {
+      number: 4,
+      title: 'Atributos Globais',
+      duration: '1H'
+    },
+    {
+      number: 5,
+      title: 'Introdução CSS',
+      duration: '1H'
+    },
+    {
+      number: 6,
+      title: 'Propriedades CSS',
+      duration: '2H',
+      topics: [
+        'Propriedade de espaçamento',
+        'Propriedade de estilização',
+        'Propriedade de texto',
+        'Mais estilizações',
+        'Animações'
+      ]
+    },
+    {
+      number: 7,
+      title: 'Projetos básicos',
+      duration: '3H'
+    },
+    {
+      number: 8,
+      title: 'Projetos avançados',
+      duration: '8H'
+    }
   ];
 
   const featuresData = [
@@ -95,13 +160,22 @@ function App() {
         </div>
       </section>
 
-      <section id="cta" className="cta">
+      <section id="content" className="content">
         <div className="container">
-          <div className="cta-content">
-            <h2></h2>
-            <p></p>
-            <div className="cta-buttons">
-            </div>
+          <div className="content-header">
+            <h2>Conteúdo do Curso</h2>
+            <p>Estrutura completa e organizada do programa</p>
+          </div>
+          <div className="modules-list">
+            {modulesData.map((module) => (
+              <ModuleFolder
+                key={module.number}
+                number={module.number}
+                title={module.title}
+                duration={module.duration}
+                topics={module.topics}
+              />
+            ))}
           </div>
         </div>
       </section>

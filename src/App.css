@@ -290,33 +290,46 @@
   }
 }
 
-.cta {
+/* ========================================
+   SEÇÃO CONTEÚDO - ESTÉTICA MINIMALISTA
+   ======================================== */
+
+.content {
   padding: var(--section-spacing) 0;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: #0f0f1e;
   color: white;
 }
 
-.cta-content {
+.content-header {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: 0 auto 3rem;
 }
 
-.cta h2 {
+.content-header h2 {
   color: white;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
 }
 
-.cta p {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
+.content-header p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
+  font-weight: 400;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
 }
 
-.cta-buttons {
+/* ========================================
+   LISTA DE MÓDULOS
+   ======================================== */
+
+.modules-list {
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  flex-direction: column;
+  gap: 0.625rem;
   flex-wrap: wrap;
 }
 
