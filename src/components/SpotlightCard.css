@@ -10,7 +10,7 @@
   border-radius: 16px;
   overflow: hidden;
   background: var(--bg-secondary);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .spotlight-card::before {
@@ -18,11 +18,11 @@
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  padding: 1px;
+  padding: 2px;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.05) 100%
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 100%
   );
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box, 
@@ -32,8 +32,9 @@
     linear-gradient(#fff 0 0) content-box, 
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+  z-index: 1;
 }
 
 /* ========================================
@@ -46,14 +47,16 @@
   inset: 0;
   border-radius: 16px;
   background: radial-gradient(
-    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(37, 99, 235, 0.15),
-    transparent 40%
+    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(37, 99, 235, 0.4),
+    rgba(59, 130, 246, 0.2) 30%,
+    transparent 60%
   );
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
+  mix-blend-mode: screen;
 }
 
 .spotlight-card:hover::after {
@@ -71,11 +74,16 @@
   padding: 2px;
   background: conic-gradient(
     from 0deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    transparent 0deg,
-    rgba(37, 99, 235, 0.8) 60deg,
-    rgba(59, 130, 246, 0.6) 120deg,
-    transparent 180deg,
-    transparent 360deg
+    rgba(37, 99, 235, 1) 0deg,
+    rgba(59, 130, 246, 0.9) 40deg,
+    rgba(96, 165, 250, 0.7) 80deg,
+    rgba(147, 197, 253, 0.5) 120deg,
+    transparent 160deg,
+    transparent 200deg,
+    rgba(147, 197, 253, 0.5) 240deg,
+    rgba(96, 165, 250, 0.7) 280deg,
+    rgba(59, 130, 246, 0.9) 320deg,
+    rgba(37, 99, 235, 1) 360deg
   );
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box, 
@@ -86,22 +94,23 @@
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
+  filter: blur(1px);
 }
 
 .spotlight-card:hover .spotlight-card-border {
   opacity: 1;
-  animation: border-glow 2s ease-in-out infinite;
+  animation: border-glow 3s ease-in-out infinite;
 }
 
 @keyframes border-glow {
   0%, 100% {
-    filter: brightness(1) drop-shadow(0 0 8px rgba(37, 99, 235, 0.4));
+    filter: blur(1px) brightness(1.2) drop-shadow(0 0 12px rgba(37, 99, 235, 0.8));
   }
   50% {
-    filter: brightness(1.2) drop-shadow(0 0 12px rgba(37, 99, 235, 0.6));
+    filter: blur(1px) brightness(1.5) drop-shadow(0 0 20px rgba(59, 130, 246, 1));
   }
 }
 
@@ -111,28 +120,24 @@
 
 .spotlight-card-content {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   height: 100%;
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: var(--bg-secondary);
+  background: transparent;
   border-radius: 16px;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .spotlight-card:hover .spotlight-card-content {
-  background: rgba(var(--bg-secondary-rgb, 249, 250, 251), 0.95);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 @media (prefers-color-scheme: dark) {
-  .spotlight-card-content {
-    background: var(--bg-secondary);
-  }
-  
   .spotlight-card:hover .spotlight-card-content {
-    background: rgba(31, 41, 55, 0.95);
+    background: rgba(255, 255, 255, 0.02);
   }
 }
 
@@ -155,9 +160,10 @@
 }
 
 .spotlight-card:hover .spotlight-card-icon {
-  transform: scale(1.05) translateY(-2px);
+  transform: scale(1.03);
   box-shadow: 
-    0 8px 20px rgba(37, 99, 235, 0.3),
+    0 6px 16px rgba(37, 99, 235, 0.4),
+    0 0 20px rgba(37, 99, 235, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
@@ -190,12 +196,8 @@
    EFEITO HOVER GERAL
    ======================================== */
 
-.spotlight-card:hover {
-  transform: translateY(-4px);
-}
-
 .spotlight-card:hover::before {
-  opacity: 1;
+  opacity: 0.6;
 }
 
 /* ========================================
