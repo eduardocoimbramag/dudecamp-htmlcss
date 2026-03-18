@@ -67,18 +67,29 @@ function App() {
         <div className="container">
           <div className="about-content">
             <div className="about-text">
-              <h2></h2>
-              <p></p>
-              <div className="about-features">
-                <div className="about-feature">
-                </div>
-                <div className="about-feature">
-                </div>
-                <div className="about-feature">
-                </div>
+              <div className="about-headline">
+                FORMAÇÃO COMPLETA EM DESENVOLVIMENTO WEB COM CERTIFICAÇÃO.
               </div>
+              
+              <h2 className="about-subheadline">
+                Aprenda <span className="html-color">HTML</span> + <span className="css-color">CSS</span> do zero e se torne um desenvolvedor pronto para empreender e para o mercado de trabalho.
+              </h2>
+              
+              <p className="about-promise">
+                Vou te mostrar como <span className="highlight-red">lucrar + de R$10 mil por mês</span> trabalhando no conforto da sua casa, sem ter que investir e com risco zero.
+              </p>
             </div>
-            <div className="about-image">
+            
+            <div className="about-video">
+              <div className="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Vídeo de exemplo"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
