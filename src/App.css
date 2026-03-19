@@ -379,6 +379,174 @@
 }
 
 /* ========================================
+   VALUE STACKING VERTICAL
+   ======================================== */
+
+.value-stacking {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stacking-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.stacking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stacking-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.stacking-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.stacking-item.featured {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.1));
+  border: 2px solid rgba(37, 99, 235, 0.4);
+  padding: 2rem 2rem;
+}
+
+.stacking-item.featured:hover {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(59, 130, 246, 0.15));
+  border-color: rgba(37, 99, 235, 0.6);
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.item-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  filter: grayscale(0.2);
+}
+
+.stacking-item.featured .item-icon {
+  font-size: 2.5rem;
+  filter: grayscale(0);
+}
+
+.item-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.3;
+}
+
+.stacking-item.featured .item-name {
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.item-description {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.item-pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.original-value {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.stacking-item.featured .original-value {
+  font-size: 1.125rem;
+}
+
+.current-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.current-value.paid {
+  color: #3b82f6;
+  font-size: 1.75rem;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.current-value.free {
+  color: #10b981;
+  font-size: 1.125rem;
+  padding: 0.375rem 1rem;
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 8px;
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.total-value-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(59, 130, 246, 0.15));
+  border: 2px solid rgba(37, 99, 235, 0.5);
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+
+.total-label {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.total-amount {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #3b82f6;
+  text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  line-height: 1;
+}
+
+/* ========================================
    BLOCO DE REVELAÇÃO DE PREÇO
    ======================================== */
 
@@ -599,6 +767,73 @@
     margin-bottom: 3rem;
   }
 
+  .value-stacking {
+    margin-bottom: 3rem;
+  }
+
+  .stacking-title {
+    font-size: clamp(1.375rem, 2.8vw, 1.75rem);
+    margin-bottom: 2rem;
+  }
+
+  .stacking-item {
+    padding: 1.25rem 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .stacking-item.featured {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .item-icon {
+    font-size: 1.75rem;
+  }
+
+  .stacking-item.featured .item-icon {
+    font-size: 2.25rem;
+  }
+
+  .item-name {
+    font-size: 1rem;
+  }
+
+  .stacking-item.featured .item-name {
+    font-size: 1.25rem;
+  }
+
+  .item-description {
+    font-size: 0.875rem;
+  }
+
+  .original-value {
+    font-size: 0.875rem;
+  }
+
+  .stacking-item.featured .original-value {
+    font-size: 1rem;
+  }
+
+  .current-value.paid {
+    font-size: 1.5rem;
+  }
+
+  .current-value.free {
+    font-size: 1rem;
+    padding: 0.3125rem 0.875rem;
+  }
+
+  .total-value-box {
+    padding: 1.75rem 2rem;
+  }
+
+  .total-label {
+    font-size: 1.25rem;
+  }
+
+  .total-amount {
+    font-size: 2.25rem;
+  }
+
   .price-reveal {
     margin: 3rem auto 2.5rem;
   }
@@ -632,6 +867,98 @@
 @media (max-width: 640px) {
   .enroll-header {
     margin-bottom: 2.5rem;
+  }
+
+  .value-stacking {
+    margin-bottom: 2.5rem;
+  }
+
+  .stacking-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .stacking-list {
+    gap: 0.875rem;
+  }
+
+  .stacking-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .stacking-item.featured {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .stacking-item:hover {
+    transform: translateX(0);
+  }
+
+  .item-info {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .item-icon {
+    font-size: 1.5rem;
+  }
+
+  .stacking-item.featured .item-icon {
+    font-size: 2rem;
+  }
+
+  .item-name {
+    font-size: 0.9375rem;
+  }
+
+  .stacking-item.featured .item-name {
+    font-size: 1.125rem;
+  }
+
+  .item-description {
+    font-size: 0.8125rem;
+  }
+
+  .item-pricing {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .original-value {
+    font-size: 0.8125rem;
+  }
+
+  .stacking-item.featured .original-value {
+    font-size: 0.9375rem;
+  }
+
+  .current-value.paid {
+    font-size: 1.375rem;
+  }
+
+  .current-value.free {
+    font-size: 0.875rem;
+    padding: 0.3125rem 0.75rem;
+  }
+
+  .total-value-box {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+
+  .total-label {
+    font-size: 1.0625rem;
+  }
+
+  .total-amount {
+    font-size: 2rem;
   }
 
   .price-reveal {
@@ -687,6 +1014,87 @@
 
   .cta-subtitle {
     font-size: 0.875rem;
+  }
+}
+
+/* ========================================
+   SEÇÃO FAQ - DÚVIDAS FREQUENTES
+   ======================================== */
+
+.faq {
+  padding: var(--section-spacing) 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.faq-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.faq-header h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.faq-header p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ========================================
+   RESPONSIVIDADE FAQ - TABLET
+   ======================================== */
+
+@media (max-width: 968px) {
+  .faq-header {
+    margin-bottom: 3rem;
+  }
+
+  .faq-header h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  }
+
+  .faq-header p {
+    font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
+  }
+
+  .faq-list {
+    gap: 0.875rem;
+  }
+}
+
+/* ========================================
+   RESPONSIVIDADE FAQ - MOBILE
+   ======================================== */
+
+@media (max-width: 640px) {
+  .faq-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .faq-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .faq-header p {
+    font-size: 0.9375rem;
+  }
+
+  .faq-list {
+    gap: 0.75rem;
   }
 }
 

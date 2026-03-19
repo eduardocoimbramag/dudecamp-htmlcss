@@ -3,7 +3,7 @@ import Hero from './components/Hero'
 import AsideMenu from './components/AsideMenu'
 import SpotlightCard from './components/SpotlightCard'
 import ModuleFolder from './components/ModuleFolder'
-import PricingTabs from './components/PricingTabs'
+import FaqItem from './components/FaqItem'
 
 function App() {
   const menuItems = [
@@ -11,17 +11,39 @@ function App() {
     { id: 'about', label: 'Sobre' },
     { id: 'content', label: 'Conteúdo' },
     { id: 'enroll', label: 'Inscrever-se' },
+    { id: 'faq', label: 'Dúvidas' },
     { id: 'footer', label: 'Contato' },
   ];
 
-  const valueStackingItems = [
-    { name: 'Conteúdo do Curso', price: 'R$ 497,00', isFree: false },
-    { name: 'Módulo - Github para iniciantes', price: 'R$ 97,00', isFree: true },
-    { name: 'Módulo - Prospecção de clientes', price: 'R$ 67,00', isFree: true },
-    { name: 'Módulo - Precificação', price: 'R$ 67,00', isFree: true },
-    { name: 'Pack de seções prontas', price: 'R$ 37,00', isFree: true },
-    { name: 'Pack de efeitos CSS', price: 'R$ 37,00', isFree: true },
-    { name: 'E-book de HTML + CSS', price: 'R$ 37,00', isFree: true }
+  const faqData = [
+    {
+      question: 'Qualquer pessoa pode fazer o curso?',
+      answer: 'Sim! O Dudecamp foi estruturado do zero absoluto ao avançado. Mesmo que você nunca tenha tocado em uma linha de código na vida, vai aprender de forma prática, didática e do seu próprio ritmo.'
+    },
+    {
+      question: 'Quais são os requisitos mínimos do meu computador?',
+      answer: 'O HTML e CSS são tecnologias extremamente leves — você não vai precisar de uma máquina potente. Recomendamos no mínimo: 4GB de RAM, processador dual-core (Intel i3, AMD Ryzen 3 ou equivalente) e conexão com a internet. Qualquer computador comprado nos últimos 8 anos já atende com folga. O editor que utilizamos é o VSCode, gratuito e disponível para Windows, Mac e Linux.'
+    },
+    {
+      question: 'O curso tem certificado?',
+      answer: 'Sim! Ao concluir o curso você recebe um certificado válido em todo o território nacional, com carga horária de 60 horas, contemplando todo o conteúdo abordado durante a formação.'
+    },
+    {
+      question: 'O curso é presencial ou online?',
+      answer: '100% online. Você assiste onde quiser, quando quiser, e pode rever as aulas quantas vezes precisar.'
+    },
+    {
+      question: 'E se eu tiver dúvidas durante o curso?',
+      answer: 'Sem problema. Dentro da plataforma você pode enviar sua dúvida diretamente abaixo de cada aula. Nossa equipe de suporte responde o mais rápido possível para que você não fique travado em nenhum conteúdo.'
+    },
+    {
+      question: 'O acesso é liberado logo após o pagamento?',
+      answer: 'Sim! Pagamentos via PIX e cartão de crédito são reconhecidos quase instantaneamente. Pagamentos por boleto bancário podem levar até 72 horas para serem identificados pelo banco.'
+    },
+    {
+      question: 'Por quanto tempo tenho acesso ao conteúdo?',
+      answer: 'O acesso é vitalício. Você paga uma vez e estuda para sempre.'
+    }
   ];
 
   const modulesData = [
@@ -199,12 +221,108 @@ function App() {
             <p>Veja tudo que você vai receber por um investimento mínimo</p>
           </div>
 
-          <PricingTabs
-            items={valueStackingItems}
-            totalValue="R$ 839,00"
-            finalPrice="R$ 79,00"
-            installmentPrice="R$ 6,50"
-          />
+          <div className="value-stacking">
+            <h3 className="stacking-title">Tudo que está incluído na sua inscrição:</h3>
+            
+            <div className="stacking-list">
+              <div className="stacking-item featured">
+                <div className="item-info">
+                  <span className="item-icon">🎓</span>
+                  <div className="item-details">
+                    <h4 className="item-name">Conteúdo do Curso</h4>
+                    <p className="item-description">Formação completa em HTML + CSS</p>
+                  </div>
+                </div>
+                <div className="item-pricing">
+                  <span className="original-value">R$ 497,00</span>
+                  <span className="current-value paid">R$ 79,00</span>
+                </div>
+              </div>
+
+              <div className="stacking-item">
+                <div className="item-info">
+                  <span className="item-icon">💻</span>
+                  <div className="item-details">
+                    <h4 className="item-name">Módulo - Github para iniciantes</h4>
+                  </div>
+                </div>
+                <div className="item-pricing">
+                  <span className="original-value">R$ 97,00</span>
+                  <span className="current-value free">GRÁTIS</span>
+                </div>
+              </div>
+
+              <div className="stacking-item">
+                <div className="item-info">
+                  <span className="item-icon">📈</span>
+                  <div className="item-details">
+                    <h4 className="item-name">Módulo - Prospecção de clientes</h4>
+                  </div>
+                </div>
+                <div className="item-pricing">
+                  <span className="original-value">R$ 67,00</span>
+                  <span className="current-value free">GRÁTIS</span>
+                </div>
+              </div>
+
+              <div className="stacking-item">
+                <div className="item-info">
+                  <span className="item-icon">💲</span>
+                  <div className="item-details">
+                    <h4 className="item-name">Módulo - Precificação</h4>
+                  </div>
+                </div>
+                <div className="item-pricing">
+                  <span className="original-value">R$ 67,00</span>
+                  <span className="current-value free">GRÁTIS</span>
+                </div>
+              </div>
+
+              <div className="stacking-item">
+                <div className="item-info">
+                  <span className="item-icon">🎨</span>
+                  <div className="item-details">
+                    <h4 className="item-name">Pack de seções prontas</h4>
+                  </div>
+                </div>
+                <div className="item-pricing">
+                  <span className="original-value">R$ 37,00</span>
+                  <span className="current-value free">GRÁTIS</span>
+                </div>
+              </div>
+
+              <div className="stacking-item">
+                <div className="item-info">
+                  <span className="item-icon">✨</span>
+                  <div className="item-details">
+                    <h4 className="item-name">Pack de efeitos CSS</h4>
+                  </div>
+                </div>
+                <div className="item-pricing">
+                  <span className="original-value">R$ 37,00</span>
+                  <span className="current-value free">GRÁTIS</span>
+                </div>
+              </div>
+
+              <div className="stacking-item">
+                <div className="item-info">
+                  <span className="item-icon">📚</span>
+                  <div className="item-details">
+                    <h4 className="item-name">E-book de HTML + CSS</h4>
+                  </div>
+                </div>
+                <div className="item-pricing">
+                  <span className="original-value">R$ 37,00</span>
+                  <span className="current-value free">GRÁTIS</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="total-value-box">
+              <span className="total-label">Valor total percebido:</span>
+              <span className="total-amount">R$ 839,00</span>
+            </div>
+          </div>
 
           <div className="price-reveal">
             <div className="price-comparison">
@@ -232,6 +350,25 @@ function App() {
               <span className="cta-text">Quero me inscrever agora</span>
             </a>
             <p className="cta-subtitle">Acesso imediato após a confirmação do pagamento</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="faq">
+        <div className="container">
+          <div className="faq-header">
+            <h2>Dúvidas frequentes</h2>
+            <p>Tire suas dúvidas antes de começar sua jornada</p>
+          </div>
+
+          <div className="faq-list">
+            {faqData.map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
           </div>
         </div>
       </section>
