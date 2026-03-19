@@ -333,6 +333,363 @@
   flex-wrap: wrap;
 }
 
+/* ========================================
+   SEÇÃO INSCREVER-SE - CONVERSÃO
+   ======================================== */
+
+.enroll {
+  padding: var(--section-spacing) 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.enroll::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1), transparent 50%),
+              radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.08), transparent 50%);
+  pointer-events: none;
+}
+
+.enroll-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.enroll-header h2 {
+  color: white;
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.enroll-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  font-weight: 400;
+}
+
+/* ========================================
+   BLOCO DE REVELAÇÃO DE PREÇO
+   ======================================== */
+
+.price-reveal {
+  max-width: 800px;
+  margin: 4rem auto 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.price-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.original-price,
+.final-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.price-value {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.price-value.strikethrough {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+}
+
+.price-value.highlight {
+  color: #10b981;
+  text-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+}
+
+.arrow-divider {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+}
+
+/* ========================================
+   DESTAQUE DO PARCELAMENTO
+   ======================================== */
+
+.installment-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.15));
+  border: 3px solid rgba(16, 185, 129, 0.4);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.installment-highlight::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1), transparent 70%);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.installment-label {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 1;
+}
+
+.installment-value {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #10b981;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 40px rgba(16, 185, 129, 0.6);
+  letter-spacing: -0.02em;
+}
+
+.installment-badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: rgba(16, 185, 129, 0.3);
+  border: 2px solid rgba(16, 185, 129, 0.5);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   CTA BUTTON
+   ======================================== */
+
+.cta-wrapper {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 10px 30px rgba(16, 185, 129, 0.4),
+    0 0 0 0 rgba(16, 185, 129, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 15px 40px rgba(16, 185, 129, 0.5),
+    0 0 0 8px rgba(16, 185, 129, 0.2);
+}
+
+.cta-button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.cta-icon {
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-text {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-subtitle {
+  margin-top: 1.25rem;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+/* ========================================
+   RESPONSIVIDADE - TABLET
+   ======================================== */
+
+@media (max-width: 968px) {
+  .enroll-header {
+    margin-bottom: 3rem;
+  }
+
+  .price-reveal {
+    margin: 3rem auto 2.5rem;
+  }
+
+  .price-comparison {
+    gap: 1.5rem;
+  }
+
+  .arrow-divider {
+    font-size: 2rem;
+  }
+
+  .installment-highlight {
+    padding: 2rem 1.5rem;
+  }
+
+  .installment-value {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+  }
+
+  .cta-button {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* ========================================
+   RESPONSIVIDADE - MOBILE
+   ======================================== */
+
+@media (max-width: 640px) {
+  .enroll-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .price-reveal {
+    margin: 2.5rem auto 2rem;
+  }
+
+  .price-comparison {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .arrow-divider {
+    transform: rotate(90deg);
+    font-size: 1.75rem;
+  }
+
+  .price-label {
+    font-size: 0.75rem;
+  }
+
+  .price-value {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+
+  .installment-highlight {
+    padding: 1.75rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .installment-label {
+    font-size: 1rem;
+  }
+
+  .installment-value {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+
+  .installment-badge {
+    padding: 0.4375rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    font-size: 1.0625rem;
+  }
+
+  .cta-icon {
+    font-size: 1.25rem;
+  }
+
+  .cta-subtitle {
+    font-size: 0.875rem;
+  }
+}
+
 .footer {
   background: var(--bg-secondary);
   padding: 4rem 0 2rem;

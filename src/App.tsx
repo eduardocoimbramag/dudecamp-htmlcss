@@ -3,13 +3,25 @@ import Hero from './components/Hero'
 import AsideMenu from './components/AsideMenu'
 import SpotlightCard from './components/SpotlightCard'
 import ModuleFolder from './components/ModuleFolder'
+import PricingTabs from './components/PricingTabs'
 
 function App() {
   const menuItems = [
     { id: 'features', label: 'Recursos' },
     { id: 'about', label: 'Sobre' },
     { id: 'content', label: 'Conteúdo' },
+    { id: 'enroll', label: 'Inscrever-se' },
     { id: 'footer', label: 'Contato' },
+  ];
+
+  const valueStackingItems = [
+    { name: 'Conteúdo do Curso', price: 'R$ 497,00', isFree: false },
+    { name: 'Módulo - Github para iniciantes', price: 'R$ 97,00', isFree: true },
+    { name: 'Módulo - Prospecção de clientes', price: 'R$ 67,00', isFree: true },
+    { name: 'Módulo - Precificação', price: 'R$ 67,00', isFree: true },
+    { name: 'Pack de seções prontas', price: 'R$ 37,00', isFree: true },
+    { name: 'Pack de efeitos CSS', price: 'R$ 37,00', isFree: true },
+    { name: 'E-book de HTML + CSS', price: 'R$ 37,00', isFree: true }
   ];
 
   const modulesData = [
@@ -176,6 +188,50 @@ function App() {
                 topics={module.topics}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="enroll" className="enroll">
+        <div className="container">
+          <div className="enroll-header">
+            <h2>Garanta Sua Vaga Agora</h2>
+            <p>Veja tudo que você vai receber por um investimento mínimo</p>
+          </div>
+
+          <PricingTabs
+            items={valueStackingItems}
+            totalValue="R$ 839,00"
+            finalPrice="R$ 79,00"
+            installmentPrice="R$ 6,50"
+          />
+
+          <div className="price-reveal">
+            <div className="price-comparison">
+              <div className="original-price">
+                <span className="price-label">DE</span>
+                <span className="price-value strikethrough">R$ 839,00</span>
+              </div>
+              <div className="arrow-divider">→</div>
+              <div className="final-price">
+                <span className="price-label">POR APENAS</span>
+                <span className="price-value highlight">R$ 79,00</span>
+              </div>
+            </div>
+
+            <div className="installment-highlight">
+              <span className="installment-label">ou em</span>
+              <span className="installment-value">12x de R$ 6,50</span>
+              <span className="installment-badge">SEM JUROS</span>
+            </div>
+          </div>
+
+          <div className="cta-wrapper">
+            <a href="#checkout" className="cta-button">
+              <span className="cta-icon">🚀</span>
+              <span className="cta-text">Quero me inscrever agora</span>
+            </a>
+            <p className="cta-subtitle">Acesso imediato após a confirmação do pagamento</p>
           </div>
         </div>
       </section>
