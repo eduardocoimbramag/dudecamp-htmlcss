@@ -116,37 +116,43 @@ function App() {
     {
       title: 'CURSO DO ZERO AO AVANÇADO',
       titleColor: '#FFD600',
-      icon: '🧻',
+      iconSrc: '/sec3grass.webp',
+      iconAlt: 'Bloco de grama Minecraft - Curso do zero',
       description: 'Nunca programou? Sem problema! Nosso curso é 100% pensado para iniciantes. Cada conceito é explicado de forma simples, didática e progressiva, mesmo que você seja um completo novato.',
     },
     {
       title: 'NECESSIDADE DO MERCADO',
       titleColor: '#FF2D95',
-      icon: '🎯',
+      iconSrc: '/sec3compass.png',
+      iconAlt: 'Bússola - Navegação no mercado',
       description: '<span class="html-color">HTML</span> + <span class="css-color">CSS</span> é a base que todo desenvolvedor precisa dominar. É o conhecimento fundamental que todas as grandes empresas exigem. Sem isso, você não consegue avançar em nenhuma área do desenvolvimento web.',
     },
     {
       title: '28 HORAS DE CONTEÚDO',
       titleColor: '#B6FF00',
-      icon: '⏰',
+      iconSrc: '/sec3xp.webp',
+      iconAlt: 'Poção de XP Minecraft - Experiência',
       description: 'Conteúdo robusto e abrangente cobrindo tudo o que você precisa saber sobre <span class="html-color">HTML</span> + <span class="css-color">CSS</span>. Estruturado de forma progressiva, com exercícios práticos e projetos reais que você vai fazer do zero até ficarem profissionais.',
     },
     {
       title: 'GITHUB',
       titleColor: '#C77DFF',
-      icon: '',
+      iconSrc: '/sec3github.png',
+      iconAlt: 'Logo GitHub',
       description: 'Você vai aprender GitHub, a ferramenta padrão do mercado usada por todas as grandes empresas. Isso é essencial para todo programador que quer trabalhar em equipe ou em empresas de grande porte.',
     },
     {
       title: 'BÔNUS',
       titleColor: '#00E5FF',
-      icon: '🧪',
+      iconSrc: '/sec3emerald.png',
+      iconAlt: 'Esmeralda Minecraft - Bônus premium',
       description: 'Além do curso, você recebe: Prospecção de Clientes (como encontrar sua primeira venda), Precificação de Serviços (quanto cobrar pelo seu trabalho) e um E-book completo de <span class="html-color">HTML</span> + <span class="css-color">CSS</span> para estudar offline.',
     },
     {
       title: 'PRONTO PARA TUDO',
       titleColor: '#FF7A00',
-      icon: '🔥',
+      iconSrc: '/sec3sword.webp',
+      iconAlt: 'Espada Minecraft - Pronto para batalha',
       description: 'Ao final do curso você estará preparado para: conseguir um emprego, empreender por conta própria, fazer freelance ou até abrir sua agência de desenvolvimento. O mercado está aberto pra você.',
     },
   ];
@@ -170,7 +176,8 @@ function App() {
                   key={index}
                   title={feature.title}
                   titleColor={feature.titleColor}
-                  icon={feature.icon}
+                  iconSrc={feature.iconSrc}
+                  iconAlt={feature.iconAlt}
                   description={feature.description}
                 />
               ))}
