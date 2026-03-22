@@ -112,28 +112,28 @@ function App() {
 
   const featuresData = [
     {
-      title: 'Recurso Premium 1',
-      description: 'Descrição detalhada do primeiro recurso premium que oferecemos.',
+      title: 'Curso do Zero ao Avançado',
+      description: 'Nunca programou? Sem problema! Nosso curso é 100% pensado para iniciantes. Cada conceito é explicado de forma simples, didática e progressiva, mesmo que você seja um completo novato.',
     },
     {
-      title: 'Recurso Premium 2',
-      description: 'Descrição detalhada do segundo recurso premium que oferecemos.',
+      title: 'Necessidade do Mercado',
+      description: 'HTML + CSS é a base que todo desenvolvedor precisa dominar. É o conhecimento fundamental que todas as grandes empresas exigem. Sem isso, você não consegue avançar em nenhuma área do desenvolvimento web.',
     },
     {
-      title: 'Recurso Premium 3',
-      description: 'Descrição detalhada do terceiro recurso premium que oferecemos.',
+      title: '28 Horas de Conteúdo',
+      description: 'Conteúdo robusto e abrangente cobrindo tudo o que você precisa saber sobre HTML + CSS. Estruturado de forma progressiva, com exercícios práticos e projetos reais que você vai fazer do zero até ficarem profissionais.',
     },
     {
-      title: 'Recurso Premium 4',
-      description: 'Descrição detalhada do quarto recurso premium que oferecemos.',
+      title: 'GitHub + Ferramentas Profissionais',
+      description: 'Você vai aprender GitHub, a ferramenta padrão do mercado usada por todas as grandes empresas. Isso é essencial para todo programador que quer trabalhar em equipe ou em empresas de grande porte.',
     },
     {
-      title: 'Recurso Premium 5',
-      description: 'Descrição detalhada do quinto recurso premium que oferecemos.',
+      title: 'Bônus Que Agregam Valor',
+      description: 'Além do curso, você recebe: Prospecção de Clientes (como encontrar sua primeira venda), Precificação de Serviços (quanto cobrar pelo seu trabalho) e um E-book completo de HTML + CSS para estudar offline.',
     },
     {
-      title: 'Recurso Premium 6',
-      description: 'Descrição detalhada do sexto recurso premium que oferecemos.',
+      title: 'Pronto Para Tudo',
+      description: 'Ao final do curso você estará preparado para: conseguir um emprego, empreender por conta própria, fazer freelance ou até abrir sua agência de desenvolvimento. O mercado está aberto pra você.',
     },
   ];
 
@@ -147,8 +147,8 @@ function App() {
         <section id="features" className="features">
           <div className="container">
             <div className="section-header">
-              <h2>Recursos Exclusivos</h2>
-              <p>Descubra tudo o que preparamos para você</p>
+              <h2>Recursos Exclusivos do Dudecamp</h2>
+              <p>Tudo que você precisa para dominar HTML + CSS e estar pronto para o mercado de trabalho</p>
             </div>
             <div className="features-grid">
               {featuresData.map((feature, index) => (
