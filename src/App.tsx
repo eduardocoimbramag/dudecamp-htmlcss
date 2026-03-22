@@ -4,12 +4,14 @@ import AsideMenu from './components/AsideMenu'
 import SpotlightCard from './components/SpotlightCard'
 import ModuleFolder from './components/ModuleFolder'
 import FaqItem from './components/FaqItem'
+import Certificate3D from './components/Certificate3D'
 
 function App() {
   const menuItems = [
     { id: 'features', label: 'Recursos' },
     { id: 'about', label: 'Sobre' },
     { id: 'content', label: 'Conteúdo' },
+    { id: 'certificate', label: 'Certificado' },
     { id: 'enroll', label: 'Inscrever-se' },
     { id: 'faq', label: 'Dúvidas' },
     { id: 'footer', label: 'Contato' },
@@ -210,6 +212,38 @@ function App() {
                 topics={module.topics}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="certificate" className="certificate">
+        <div className="container">
+          <div className="certificate-content">
+            <div className="certificate-text">
+              <h2>Certificado de Conclusão</h2>
+              <p className="certificate-description">
+                Ao concluir o curso, você recebe um certificado válido em todo o território nacional, 
+                com carga horária de 60 horas, contemplando todo o conteúdo abordado durante a formação.
+              </p>
+              <p className="certificate-description">
+                Este documento comprova oficialmente suas competências em HTML e CSS, 
+                sendo reconhecido por empresas e instituições de ensino em todo o Brasil.
+              </p>
+              <p className="certificate-description">
+                Utilize seu certificado para enriquecer seu currículo, comprovar conhecimentos 
+                em processos seletivos e fortalecer sua presença profissional no mercado de tecnologia.
+              </p>
+            </div>
+
+            <div className="certificate-visual">
+              <Certificate3D />
+            </div>
+          </div>
+
+          <div className="certificate-tip">
+            <p>
+              💡 <strong>Dica:</strong> Compartilhe seus certificados no LinkedIn para construir sua credibilidade profissional e atrair oportunidades de trabalho.
+            </p>
           </div>
         </div>
       </section>
