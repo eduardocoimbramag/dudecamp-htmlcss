@@ -172,12 +172,14 @@
    ======================================== */
 
 .spotlight-card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.125rem;
+  font-weight: 700;
   color: var(--text-primary);
-  margin: 0;
-  line-height: 1.4;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
   text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .spotlight-card-description {
@@ -186,6 +188,31 @@
   color: var(--text-secondary);
   margin: 0;
   flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================================
+   ÍCONE DECORATIVO NO CANTO INFERIOR DIREITO
+   ======================================== */
+
+.spotlight-card-decorative-icon {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  font-size: 3.5rem;
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  transition: all 0.3s ease;
+  filter: grayscale(0.3);
+}
+
+.spotlight-card:hover .spotlight-card-decorative-icon {
+  opacity: 0.18;
+  transform: scale(1.05);
+  filter: grayscale(0);
 }
 
 /* ========================================
@@ -215,7 +242,14 @@
   }
 
   .spotlight-card-title {
-    font-size: 1.125rem;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+  }
+
+  .spotlight-card-decorative-icon {
+    font-size: 3rem;
+    bottom: 1rem;
+    right: 1rem;
   }
 
   .spotlight-card-description {
@@ -243,7 +277,16 @@
   }
 
   .spotlight-card-title {
-    font-size: 1.0625rem;
+    font-size: 0.9375rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.875rem;
+  }
+
+  .spotlight-card-decorative-icon {
+    font-size: 2.5rem;
+    bottom: 0.875rem;
+    right: 0.875rem;
+    opacity: 0.1;
   }
 
   .spotlight-card-description {

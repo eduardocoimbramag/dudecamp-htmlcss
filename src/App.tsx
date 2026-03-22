@@ -114,33 +114,39 @@ function App() {
 
   const featuresData = [
     {
-      title: 'Curso do Zero ao Avançado',
+      title: 'CURSO DO ZERO AO AVANÇADO',
       titleColor: '#FFD600',
+      icon: '🧻',
       description: 'Nunca programou? Sem problema! Nosso curso é 100% pensado para iniciantes. Cada conceito é explicado de forma simples, didática e progressiva, mesmo que você seja um completo novato.',
     },
     {
-      title: 'Necessidade do Mercado',
+      title: 'NECESSIDADE DO MERCADO',
       titleColor: '#FF2D95',
+      icon: '🎯',
       description: '<span class="html-color">HTML</span> + <span class="css-color">CSS</span> é a base que todo desenvolvedor precisa dominar. É o conhecimento fundamental que todas as grandes empresas exigem. Sem isso, você não consegue avançar em nenhuma área do desenvolvimento web.',
     },
     {
-      title: '28 Horas de Conteúdo',
+      title: '28 HORAS DE CONTEÚDO',
       titleColor: '#B6FF00',
+      icon: '⏰',
       description: 'Conteúdo robusto e abrangente cobrindo tudo o que você precisa saber sobre <span class="html-color">HTML</span> + <span class="css-color">CSS</span>. Estruturado de forma progressiva, com exercícios práticos e projetos reais que você vai fazer do zero até ficarem profissionais.',
     },
     {
-      title: 'GitHub + Ferramentas Profissionais',
+      title: 'GITHUB',
       titleColor: '#C77DFF',
+      icon: '',
       description: 'Você vai aprender GitHub, a ferramenta padrão do mercado usada por todas as grandes empresas. Isso é essencial para todo programador que quer trabalhar em equipe ou em empresas de grande porte.',
     },
     {
-      title: 'Bônus Que Agregam Valor',
+      title: 'BÔNUS',
       titleColor: '#00E5FF',
+      icon: '🧪',
       description: 'Além do curso, você recebe: Prospecção de Clientes (como encontrar sua primeira venda), Precificação de Serviços (quanto cobrar pelo seu trabalho) e um E-book completo de <span class="html-color">HTML</span> + <span class="css-color">CSS</span> para estudar offline.',
     },
     {
-      title: 'Pronto Para Tudo',
+      title: 'PRONTO PARA TUDO',
       titleColor: '#FF7A00',
+      icon: '🔥',
       description: 'Ao final do curso você estará preparado para: conseguir um emprego, empreender por conta própria, fazer freelance ou até abrir sua agência de desenvolvimento. O mercado está aberto pra você.',
     },
   ];
@@ -164,6 +170,7 @@ function App() {
                   key={index}
                   title={feature.title}
                   titleColor={feature.titleColor}
+                  icon={feature.icon}
                   description={feature.description}
                 />
               ))}
@@ -188,15 +195,13 @@ function App() {
               </p>
             </div>
             
-            <div className="about-video">
-              <div className="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Vídeo de exemplo"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+            <div className="about-image">
+              <div className="image-wrapper">
+                <img 
+                  src="/photosec2.webp" 
+                  alt="Dudecamp - Formação HTML + CSS"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>

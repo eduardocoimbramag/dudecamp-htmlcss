@@ -2,7 +2,7 @@ import { useRef, useState, MouseEvent } from 'react';
 import './SpotlightCard.css';
 
 interface SpotlightCardProps {
-  icon?: React.ReactNode;
+  icon?: string;
   title: string;
   titleColor?: string;
   description: string;
@@ -34,7 +34,6 @@ function SpotlightCard({ icon, title, titleColor, description }: SpotlightCardPr
     >
       <div className="spotlight-card-border"></div>
       <div className="spotlight-card-content">
-        {icon && <div className="spotlight-card-icon">{icon}</div>}
         <h3 
           className="spotlight-card-title"
           style={{
@@ -48,6 +47,7 @@ function SpotlightCard({ icon, title, titleColor, description }: SpotlightCardPr
           className="spotlight-card-description"
           dangerouslySetInnerHTML={{ __html: description }}
         />
+        {icon && <div className="spotlight-card-decorative-icon">{icon}</div>}
       </div>
     </div>
   );
