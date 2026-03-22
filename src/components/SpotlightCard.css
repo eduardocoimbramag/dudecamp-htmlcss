@@ -177,11 +177,7 @@
   color: var(--text-primary);
   margin: 0;
   line-height: 1.4;
-  transition: color 0.3s ease;
-}
-
-.spotlight-card:hover .spotlight-card-title {
-  color: var(--primary);
+  text-align: center;
 }
 
 .spotlight-card-description {

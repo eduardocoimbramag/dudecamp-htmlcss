@@ -115,26 +115,32 @@ function App() {
   const featuresData = [
     {
       title: 'Curso do Zero ao Avançado',
+      titleColor: '#FFD600',
       description: 'Nunca programou? Sem problema! Nosso curso é 100% pensado para iniciantes. Cada conceito é explicado de forma simples, didática e progressiva, mesmo que você seja um completo novato.',
     },
     {
       title: 'Necessidade do Mercado',
-      description: 'HTML + CSS é a base que todo desenvolvedor precisa dominar. É o conhecimento fundamental que todas as grandes empresas exigem. Sem isso, você não consegue avançar em nenhuma área do desenvolvimento web.',
+      titleColor: '#FF2D95',
+      description: '<span class="html-color">HTML</span> + <span class="css-color">CSS</span> é a base que todo desenvolvedor precisa dominar. É o conhecimento fundamental que todas as grandes empresas exigem. Sem isso, você não consegue avançar em nenhuma área do desenvolvimento web.',
     },
     {
       title: '28 Horas de Conteúdo',
-      description: 'Conteúdo robusto e abrangente cobrindo tudo o que você precisa saber sobre HTML + CSS. Estruturado de forma progressiva, com exercícios práticos e projetos reais que você vai fazer do zero até ficarem profissionais.',
+      titleColor: '#B6FF00',
+      description: 'Conteúdo robusto e abrangente cobrindo tudo o que você precisa saber sobre <span class="html-color">HTML</span> + <span class="css-color">CSS</span>. Estruturado de forma progressiva, com exercícios práticos e projetos reais que você vai fazer do zero até ficarem profissionais.',
     },
     {
       title: 'GitHub + Ferramentas Profissionais',
+      titleColor: '#C77DFF',
       description: 'Você vai aprender GitHub, a ferramenta padrão do mercado usada por todas as grandes empresas. Isso é essencial para todo programador que quer trabalhar em equipe ou em empresas de grande porte.',
     },
     {
       title: 'Bônus Que Agregam Valor',
-      description: 'Além do curso, você recebe: Prospecção de Clientes (como encontrar sua primeira venda), Precificação de Serviços (quanto cobrar pelo seu trabalho) e um E-book completo de HTML + CSS para estudar offline.',
+      titleColor: '#00E5FF',
+      description: 'Além do curso, você recebe: Prospecção de Clientes (como encontrar sua primeira venda), Precificação de Serviços (quanto cobrar pelo seu trabalho) e um E-book completo de <span class="html-color">HTML</span> + <span class="css-color">CSS</span> para estudar offline.',
     },
     {
       title: 'Pronto Para Tudo',
+      titleColor: '#FF7A00',
       description: 'Ao final do curso você estará preparado para: conseguir um emprego, empreender por conta própria, fazer freelance ou até abrir sua agência de desenvolvimento. O mercado está aberto pra você.',
     },
   ];
@@ -150,13 +156,14 @@ function App() {
           <div className="container">
             <div className="section-header">
               <h2>Recursos Exclusivos do Dudecamp</h2>
-              <p>Tudo que você precisa para dominar HTML + CSS e estar pronto para o mercado de trabalho</p>
+              <p>Tudo que você precisa para dominar <span className="html-color">HTML</span> + <span className="css-color">CSS</span> e estar pronto para o mercado de trabalho</p>
             </div>
             <div className="features-grid">
               {featuresData.map((feature, index) => (
                 <SpotlightCard
                   key={index}
                   title={feature.title}
+                  titleColor={feature.titleColor}
                   description={feature.description}
                 />
               ))}
@@ -218,7 +225,7 @@ function App() {
 
       <section id="certificate" className="certificate">
         <div className="container">
-          <div className="certificate-content">
+          <div className="certificate-layout">
             <div className="certificate-text">
               <h2>Certificado de Conclusão</h2>
               <p className="certificate-description">

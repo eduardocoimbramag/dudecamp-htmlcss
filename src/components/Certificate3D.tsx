@@ -43,8 +43,6 @@ function Certificate3D() {
     setIsDragging(false);
   };
 
-  const showFront = Math.abs((rotation % 360 + 360) % 360 - 180) > 90;
-
   return (
     <div 
       className="certificate-3d-container"
@@ -61,42 +59,60 @@ function Certificate3D() {
         style={{ transform: `rotateY(${rotation}deg)` }}
       >
         <div className="certificate-side certificate-front">
-          <div className="certificate-content">
-            <div className="certificate-header">
-              <h3>CERTIFICADO DE CONCLUSÃO</h3>
-            </div>
-            <div className="certificate-body">
-              <p className="certificate-text">Certificamos que</p>
-              <p className="certificate-name">Nome do Aluno</p>
-              <p className="certificate-text">concluiu com êxito o curso</p>
-              <p className="certificate-course">Formação HTML + CSS</p>
-              <p className="certificate-hours">Carga horária: 60 horas</p>
-            </div>
-            <div className="certificate-footer">
-              <div className="certificate-signature">
-                <div className="signature-line"></div>
-                <p>Dudecamp</p>
-              </div>
-              <div className="certificate-date">
-                <p>Data de conclusão</p>
-                <p className="date-value">__/__/____</p>
+          <div className="cert-inner">
+            <div className="cert-border-outer">
+              <div className="cert-border-inner">
+
+                <div className="cert-top">
+                  <p className="cert-institution">DUDECAMP</p>
+                  <h2 className="cert-title">Certificado de Conclusão</h2>
+                  <div className="cert-divider">
+                    <span className="cert-divider-line"></span>
+                    <span className="cert-divider-diamond">◆</span>
+                    <span className="cert-divider-line"></span>
+                  </div>
+                </div>
+
+                <div className="cert-body">
+                  <p className="cert-certifies">Certificamos que</p>
+                  <p className="cert-name">Nome do Aluno</p>
+                  <p className="cert-certifies">concluiu com aproveitamento o curso</p>
+                  <p className="cert-course">Formação Completa em HTML + CSS</p>
+                  <p className="cert-hours">Carga Horária: 60 horas</p>
+                </div>
+
+                <div className="cert-bottom">
+                  <div className="cert-sig">
+                    <div className="cert-sig-line"></div>
+                    <p className="cert-sig-name">Dudecamp</p>
+                    <p className="cert-sig-role">Plataforma de Ensino</p>
+                  </div>
+                  <div className="cert-seal">
+                    <div className="cert-seal-circle">
+                      <span>✦</span>
+                    </div>
+                  </div>
+                  <div className="cert-sig">
+                    <div className="cert-sig-line"></div>
+                    <p className="cert-sig-name">__/__/____</p>
+                    <p className="cert-sig-role">Data de Conclusão</p>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
 
         <div className="certificate-side certificate-back">
-          <div className="certificate-back-content">
-            <h4>Parabéns pela sua conquista!</h4>
-            <p>
-              Este certificado representa seu compromisso com o aprendizado e desenvolvimento profissional. 
-              Você deu um passo importante rumo ao domínio das tecnologias fundamentais da web.
+          <div className="cert-back-inner">
+            <div className="cert-back-logo">DUDECAMP</div>
+            <h4 className="cert-back-title">Parabéns pela sua conquista!</h4>
+            <p className="cert-back-text">
+              Este certificado representa seu compromisso com o aprendizado e desenvolvimento profissional.
+              Você dominou as tecnologias fundamentais da web e está pronto para o mercado.
             </p>
-            <p>
-              Continue praticando, construindo projetos e expandindo seus conhecimentos. 
-              O mercado de tecnologia está cheio de oportunidades para quem se dedica.
-            </p>
-            <p className="motivational-quote">
+            <p className="cert-back-quote">
               "O sucesso é a soma de pequenos esforços repetidos dia após dia."
             </p>
           </div>

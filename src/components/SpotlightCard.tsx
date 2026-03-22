@@ -4,10 +4,11 @@ import './SpotlightCard.css';
 interface SpotlightCardProps {
   icon?: React.ReactNode;
   title: string;
+  titleColor?: string;
   description: string;
 }
 
-function SpotlightCard({ icon, title, description }: SpotlightCardProps) {
+function SpotlightCard({ icon, title, titleColor, description }: SpotlightCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -34,8 +35,19 @@ function SpotlightCard({ icon, title, description }: SpotlightCardProps) {
       <div className="spotlight-card-border"></div>
       <div className="spotlight-card-content">
         {icon && <div className="spotlight-card-icon">{icon}</div>}
-        <h3 className="spotlight-card-title">{title}</h3>
-        <p className="spotlight-card-description">{description}</p>
+        <h3 
+          className="spotlight-card-title"
+          style={{
+            color: titleColor,
+            textShadow: titleColor ? `0 0 20px ${titleColor}80, 0 0 40px ${titleColor}40` : undefined
+          }}
+        >
+          {title}
+        </h3>
+        <p 
+          className="spotlight-card-description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </div>
     </div>
   );
