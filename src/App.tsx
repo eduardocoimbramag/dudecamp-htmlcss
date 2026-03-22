@@ -221,16 +221,29 @@ function App() {
             <h2>Conteúdo do Curso</h2>
             <p>Estrutura completa e organizada do programa</p>
           </div>
-          <div className="modules-list">
-            {modulesData.map((module) => (
-              <ModuleFolder
-                key={module.number}
-                number={module.number}
-                title={module.title}
-                duration={module.duration}
-                topics={module.topics}
-              />
-            ))}
+          <div className="modules-columns-wrapper">
+            <div className="modules-column">
+              {modulesData.slice(0, 4).map((module) => (
+                <ModuleFolder
+                  key={module.number}
+                  number={module.number}
+                  title={module.title}
+                  duration={module.duration}
+                  topics={module.topics}
+                />
+              ))}
+            </div>
+            <div className="modules-column">
+              {modulesData.slice(4, 8).map((module) => (
+                <ModuleFolder
+                  key={module.number}
+                  number={module.number}
+                  title={module.title}
+                  duration={module.duration}
+                  topics={module.topics}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>

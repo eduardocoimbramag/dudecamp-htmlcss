@@ -328,16 +328,22 @@
 }
 
 /* ========================================
-   LISTA DE MÓDULOS
+   LAYOUT DE MÓDULOS - 2 COLUNAS
    ======================================== */
 
-.modules-list {
-  max-width: 900px;
+.modules-columns-wrapper {
+  max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.modules-column {
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
-  flex-wrap: wrap;
 }
 
 /* ========================================
@@ -812,6 +818,12 @@
    ======================================== */
 
 @media (max-width: 968px) {
+  .modules-columns-wrapper {
+    grid-template-columns: 1fr;
+    gap: 0.625rem;
+    max-width: 700px;
+  }
+
   .certificate-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
