@@ -317,11 +317,6 @@ function App() {
                 </div>
               </div>
             </div>
-
-            <div className="total-value-box">
-              <span className="total-label">Valor total percebido:</span>
-              <span className="total-amount">R$ 839,00</span>
-            </div>
           </div>
 
           <div className="price-reveal">

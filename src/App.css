@@ -480,7 +480,7 @@
 .item-pricing {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 0.5rem;
   flex-shrink: 0;
 }
@@ -489,11 +489,14 @@
   font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.4);
   text-decoration: line-through;
+  text-decoration-color: #ef4444;
+  text-decoration-thickness: 2px;
   font-weight: 500;
 }
 
 .stacking-item.featured .original-value {
   font-size: 1.125rem;
+  text-decoration-thickness: 2.5px;
 }
 
 .current-value {
@@ -517,33 +520,6 @@
   border: 2px solid rgba(16, 185, 129, 0.3);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.total-value-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 2.5rem;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(59, 130, 246, 0.15));
-  border: 2px solid rgba(37, 99, 235, 0.5);
-  border-radius: 16px;
-  margin-top: 2rem;
-}
-
-.total-label {
-  font-size: 1.375rem;
-  font-weight: 600;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.total-amount {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #3b82f6;
-  text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-  line-height: 1;
 }
 
 /* ========================================
@@ -589,8 +565,9 @@
 }
 
 .price-value.strikethrough {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: line-through;
+  text-decoration-color: #ef4444;
   text-decoration-thickness: 3px;
 }
 
@@ -822,18 +799,6 @@
     padding: 0.3125rem 0.875rem;
   }
 
-  .total-value-box {
-    padding: 1.75rem 2rem;
-  }
-
-  .total-label {
-    font-size: 1.25rem;
-  }
-
-  .total-amount {
-    font-size: 2.25rem;
-  }
-
   .price-reveal {
     margin: 3rem auto 2.5rem;
   }
@@ -944,21 +909,6 @@
   .current-value.free {
     font-size: 0.875rem;
     padding: 0.3125rem 0.75rem;
-  }
-
-  .total-value-box {
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 1.5rem 1.25rem;
-    text-align: center;
-  }
-
-  .total-label {
-    font-size: 1.0625rem;
-  }
-
-  .total-amount {
-    font-size: 2rem;
   }
 
   .price-reveal {
