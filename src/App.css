@@ -361,7 +361,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 0.5rem;
 }
 
 .certificate-text h2 {

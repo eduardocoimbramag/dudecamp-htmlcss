@@ -167,8 +167,8 @@ function App() {
         <section id="features" className="features">
           <div className="container">
             <div className="section-header">
-              <h2>Recursos Exclusivos do Dudecamp</h2>
-              <p>Tudo que você precisa para dominar <span className="html-color">HTML</span> + <span className="css-color">CSS</span> e estar pronto para o mercado de trabalho</p>
+              <h2>Recursos Exclusivos</h2>
+              <p>Tudo que você precisa para dominar <span className="html-color">HTML</span> + <span className="css-color">CSS</span></p>
             </div>
             <div className="features-grid">
               {featuresData.map((feature, index) => (
@@ -254,16 +254,10 @@ function App() {
             <div className="certificate-text">
               <h2>Certificado de Conclusão</h2>
               <p className="certificate-description">
-                Ao concluir o curso, você recebe um certificado válido em todo o território nacional, 
-                com carga horária de 60 horas, contemplando todo o conteúdo abordado durante a formação.
+                Ao concluir o curso, você recebe um certificado oficial de 60 horas comprovando sua formação em <span className="html-color">HTML</span> e <span className="css-color">CSS</span>.
               </p>
               <p className="certificate-description">
-                Este documento comprova oficialmente suas competências em HTML e CSS, 
-                sendo reconhecido por empresas e instituições de ensino em todo o Brasil.
-              </p>
-              <p className="certificate-description">
-                Utilize seu certificado para enriquecer seu currículo, comprovar conhecimentos 
-                em processos seletivos e fortalecer sua presença profissional no mercado de tecnologia.
+                Este documento atesta que você completou uma formação estruturada e prática em duas das tecnologias mais fundamentais para desenvolvimento web. Não é apenas um "certificado de presença" é a documentação oficial de que você domina esses conceitos e sabe aplicá-los em projetos reais.
               </p>
             </div>
 
