@@ -1,4 +1,5 @@
 import './Hero.css';
+import Particles from './Particles';
 
 function Hero() {
   return (
@@ -13,6 +14,22 @@ function Hero() {
       >
         <div className="hero-overlay"></div>
       </div>
+
+      {/* VINHETA — escurece bordas/cantos, centro limpo */}
+      <div className="hero-vignette" aria-hidden="true"></div>
+
+      {/* PARTÍCULAS — frente do bg, atrás do conteúdo */}
+      <Particles
+        particleColors={["#ffffff"]}
+        particleCount={300}
+        particleSpread={10}
+        speed={0.1}
+        particleBaseSize={100}
+        moveParticlesOnHover
+        alphaParticles
+        disableRotation
+        pixelRatio={1}
+      />
 
       {/* CONTEÚDO CENTRALIZADO */}
       <div className="hero-content">
