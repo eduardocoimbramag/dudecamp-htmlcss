@@ -1101,6 +1101,223 @@
 }
 
 /* ========================================
+   SEÇÃO INSTRUTORES
+   ======================================== */
+
+.instructors {
+  padding: var(--section-spacing) 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.instructors-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.instructors-header h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.instructors-header p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.instructor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.instructor-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+  padding: 2.5rem 3rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.instructor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(37, 99, 235, 0.3);
+  border-left-color: var(--primary);
+}
+
+.instructor-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.instructor-index {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  opacity: 0.65;
+}
+
+.instructor-name {
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.instructor-role {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.3px;
+  margin-bottom: 1rem;
+}
+
+.instructor-bio {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 560px;
+}
+
+.instructor-photo-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+}
+
+.instructor-circular-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.instructor-circular-text span {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.instructor-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.2),
+    0 0 0 6px rgba(255, 255, 255, 0.12);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instructor-card:hover .instructor-photo {
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.25),
+    0 0 0 8px rgba(255, 255, 255, 0.18);
+}
+
+/* RESPONSIVIDADE INSTRUTORES - TABLET */
+
+@media (max-width: 968px) {
+  .instructors-header {
+    margin-bottom: 2.75rem;
+  }
+
+  .instructor-card {
+    gap: 2rem;
+    padding: 2rem 2rem;
+  }
+
+  .instructor-photo-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .instructor-photo {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* RESPONSIVIDADE INSTRUTORES - MOBILE */
+
+@media (max-width: 640px) {
+  .instructors-header {
+    margin-bottom: 2rem;
+  }
+
+  .instructors-header p {
+    font-size: 1rem;
+  }
+
+  .instructor-list {
+    gap: 1.25rem;
+  }
+
+  .instructor-card {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .instructor-card .instructor-photo-wrapper {
+    order: -1;
+    margin: 0 auto;
+    width: 160px;
+    height: 160px;
+  }
+
+  .instructor-circular-text {
+    width: 160px !important;
+    height: 160px !important;
+  }
+
+  .instructor-photo {
+    width: 95px;
+    height: 95px;
+  }
+
+  .instructor-info {
+    align-items: center;
+  }
+
+  .instructor-bio {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .instructor-role {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* ========================================
    SEÇÃO FAQ - DÚVIDAS FREQUENTES
    ======================================== */
 

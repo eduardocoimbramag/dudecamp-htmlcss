@@ -35,18 +35,7 @@ function Hero() {
       <div className="hero-content">
         <div className="hero-center">
           
-          {/* 1. FOTO PESSOAL - Trocar aqui sua foto */}
-          <div className="hero-photo-wrapper">
-            <div className="hero-photo-glow"></div>
-            <img 
-              // Troque '/eduardofoto.jpeg' se quiser outra foto em public
-              src="/eduardofoto.jpeg" 
-              alt="Foto do instrutor"
-              className="hero-photo"
-            />
-          </div>
-
-          {/* 2. LOGO DO CURSO - Trocar aqui a logo do curso */}
+          {/* 1. LOGO DO CURSO - Trocar aqui a logo do curso */}
           <div className="hero-logo">
             <img 
               // Troque '/Dudecamp.png' caso utilize outro arquivo

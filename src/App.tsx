@@ -5,6 +5,7 @@ import SpotlightCard from './components/SpotlightCard'
 import ModuleFolder from './components/ModuleFolder'
 import FaqItem from './components/FaqItem'
 import Certificate3D from './components/Certificate3D'
+import CircularText from './components/CircularText'
 
 function App() {
   const menuItems = [
@@ -13,8 +14,33 @@ function App() {
     { id: 'content', label: 'Conteúdo' },
     { id: 'certificate', label: 'Certificado' },
     { id: 'enroll', label: 'Inscrever-se' },
+    { id: 'instructors', label: 'Instrutores' },
     { id: 'faq', label: 'Dúvidas' },
     { id: 'footer', label: 'Contato' },
+  ];
+
+  const instructorsData = [
+    {
+      name: 'Eduardo Coimbra',
+      role: 'Fundador & Instrutor Principal',
+      bio: 'Desenvolvedor front-end com anos de experiência em projetos reais, apaixonado por transformar iniciantes em profissionais capazes de construir interfaces modernas e responsivas. Criador do Dudecamp e responsável por toda a estrutura didática do curso.',
+      imageSrc: '/eduardofoto.jpeg',
+      imageAlt: 'Foto de Eduardo Coimbra',
+    },
+    {
+      name: 'Nome do Instrutor 2',
+      role: 'Instrutor de Desenvolvimento Web',
+      bio: 'Placeholder — edite esta bio com a apresentação real do segundo instrutor. Descreva sua experiência, área de atuação e o que ele traz de valor para os alunos do Dudecamp.',
+      imageSrc: '/eduardofoto.jpeg',
+      imageAlt: 'Foto do segundo instrutor',
+    },
+    {
+      name: 'Nome do Instrutor 3',
+      role: 'Instrutor de Desenvolvimento Web',
+      bio: 'Placeholder — edite esta bio com a apresentação real do terceiro instrutor. Descreva sua experiência, área de atuação e o que ele traz de valor para os alunos do Dudecamp.',
+      imageSrc: '/eduardofoto.jpeg',
+      imageAlt: 'Foto do terceiro instrutor',
+    },
   ];
 
   const faqData = [
@@ -405,6 +431,41 @@ function App() {
               <span className="cta-text">Quero me inscrever agora</span>
             </a>
             <p className="cta-subtitle">Acesso imediato após a confirmação do pagamento</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="instructors" className="instructors">
+        <div className="container">
+          <div className="instructors-header">
+            <h2>Instrutores</h2>
+            <p>Aprenda com profissionais que dominam e ensinam <span className="html-color">HTML</span> + <span className="css-color">CSS</span> do zero ao avançado.</p>
+          </div>
+
+          <div className="instructor-list">
+            {instructorsData.map((instructor, index) => (
+              <div key={index} className="instructor-card">
+                <div className="instructor-info">
+                  <span className="instructor-index">0{index + 1}</span>
+                  <h3 className="instructor-name">{instructor.name}</h3>
+                  <p className="instructor-role">{instructor.role}</p>
+                  <p className="instructor-bio">{instructor.bio}</p>
+                </div>
+                <div className="instructor-photo-wrapper">
+                  <CircularText
+                    text="HTML*CSS*DUDECAMP*CURSO*"
+                    spinDuration={20}
+                    onHover="speedUp"
+                    className="instructor-circular-text"
+                  />
+                  <img
+                    src={instructor.imageSrc}
+                    alt={instructor.imageAlt}
+                    className="instructor-photo"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
