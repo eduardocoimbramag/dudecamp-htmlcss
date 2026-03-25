@@ -1,15 +1,14 @@
-import { useRef, useState, MouseEvent } from 'react';
+import { useRef, useState } from 'react';
+import type { MouseEvent } from 'react';
 import './SpotlightCard.css';
 
 interface SpotlightCardProps {
-  iconSrc?: string;
-  iconAlt?: string;
   title: string;
   titleColor?: string;
   description: string;
 }
 
-function SpotlightCard({ iconSrc, iconAlt, title, titleColor, description }: SpotlightCardProps) {
+function SpotlightCard({ title, titleColor, description }: SpotlightCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -48,16 +47,6 @@ function SpotlightCard({ iconSrc, iconAlt, title, titleColor, description }: Spo
           className="spotlight-card-description"
           dangerouslySetInnerHTML={{ __html: description }}
         />
-        {iconSrc && (
-          <div className="spotlight-card-icon-wrap">
-            <img 
-              src={iconSrc}
-              alt={iconAlt || ''}
-              className="spotlight-card-icon-image"
-              loading="lazy"
-            />
-          </div>
-        )}
       </div>
     </div>
   );

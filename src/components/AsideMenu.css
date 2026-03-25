@@ -8,8 +8,9 @@
   top: 0;
   height: 100vh;
   width: 280px;
-  background: var(--bg-primary);
-  border-right: 1px solid var(--border);
+  background: rgba(8, 8, 8, 0.97);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(255, 214, 0, 0.14);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,13 +23,6 @@
 .aside-menu.visible {
   opacity: 1;
   pointer-events: auto;
-}
-
-@media (prefers-color-scheme: dark) {
-  .aside-menu {
-    background: rgba(17, 24, 39, 0.95);
-    backdrop-filter: blur(10px);
-  }
 }
 
 .aside-nav {
@@ -76,14 +70,14 @@
   top: 0;
   width: 4px;
   height: 100%;
-  background: var(--primary);
+  background: #FFD600;
   transform: scaleY(0);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 0 4px 4px 0;
 }
 
 .aside-nav-link:hover {
-  background: var(--bg-secondary);
+  background: rgba(255, 214, 0, 0.07);
   transform: translateX(4px);
 }
 
@@ -96,7 +90,7 @@
    ======================================== */
 
 .aside-nav-link.active {
-  background: var(--bg-accent);
+  background: rgba(255, 214, 0, 0.11);
   transform: translateX(8px);
 }
 
@@ -105,7 +99,7 @@
 }
 
 .aside-nav-link.active .nav-link-text {
-  color: var(--primary);
+  color: #FFD600;
   font-weight: 600;
   transform: scale(1.05);
 }
@@ -117,13 +111,13 @@
 .nav-link-text {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.60);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: 0.3px;
 }
 
 .aside-nav-link:hover .nav-link-text {
-  color: var(--text-primary);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 /* ========================================
@@ -141,9 +135,9 @@
 }
 
 .dotted-circle {
-  color: var(--primary);
+  color: #FFD600;
   animation: rotate-circle 8s linear infinite;
-  filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.4));
+  filter: drop-shadow(0 0 6px rgba(255, 214, 0, 0.55));
 }
 
 @keyframes rotate-circle {
@@ -218,16 +212,10 @@
     width: 100%;
     height: auto;
     border-right: none;
-    border-top: 1px solid var(--border);
-    background: var(--bg-primary);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .aside-menu {
-      background: rgba(17, 24, 39, 0.98);
-      backdrop-filter: blur(20px);
-    }
+    border-top: 1px solid rgba(255, 214, 0, 0.14);
+    background: rgba(8, 8, 8, 0.98);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.55);
   }
 
   .aside-nav {

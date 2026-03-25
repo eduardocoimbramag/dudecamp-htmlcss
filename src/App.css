@@ -88,7 +88,7 @@
 
 .features {
   padding: var(--section-spacing) 0;
-  background: var(--bg-primary);
+  background: #080808;
 }
 
 .section-header {
