@@ -213,7 +213,7 @@ function App() {
               </h2>
               
               <p className="about-promise">
-                Vou te mostrar como <span className="highlight-red">lucrar + de R$10 mil por mês</span> trabalhando no conforto da sua casa, sem ter que investir e com risco zero.
+                Vou te mostrar como <span className="highlight-yellow">lucrar + de R$10 mil por mês</span> trabalhando no conforto da sua casa, sem ter que investir e com risco zero.
               </p>
             </div>
             

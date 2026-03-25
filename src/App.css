@@ -5,6 +5,7 @@
 .main-content {
   margin-left: 280px;
   min-height: 100vh;
+  background: #080808;
   transition: margin-left 0.3s ease;
 }
 
@@ -142,7 +143,7 @@
 
 .about {
   padding: var(--section-spacing) 0;
-  background: #1a1a2e;
+  background: #080808;
 }
 
 .about-content {
@@ -153,13 +154,13 @@
 }
 
 /* ========================================
-   HEADLINE PRINCIPAL - FUNDO VERMELHO
+   HEADLINE PRINCIPAL - FUNDO AMARELO
    ======================================== */
 
 .about-headline {
   display: inline-block;
-  background: #dc2626;
-  color: white;
+  background: #FFD600;
+  color: #0a0a0a;
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -167,7 +168,7 @@
   border-radius: 8px;
   margin-bottom: 2rem;
   line-height: 1.4;
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 214, 0, 0.28);
   text-transform: uppercase;
 }
 
@@ -195,7 +196,7 @@
 }
 
 /* ========================================
-   PROMESSA COM DESTAQUE VERMELHO
+   PROMESSA COM DESTAQUE AMARELO
    ======================================== */
 
 .about-promise {
@@ -206,8 +207,8 @@
   font-weight: 400;
 }
 
-.highlight-red {
-  color: #dc2626;
+.highlight-yellow {
+  color: #FFD600;
   font-weight: 700;
 }
 
@@ -228,8 +229,8 @@
   box-shadow: 
     0 10px 40px rgba(0, 0, 0, 0.3),
     0 4px 20px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.08);
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    0 0 0 1px rgba(255, 214, 0, 0.08);
+  background: linear-gradient(135deg, #141414 0%, #0d0d0d 100%);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -421,7 +422,7 @@
 
 .enroll {
   padding: var(--section-spacing) 0;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: #080808;
   color: white;
   position: relative;
   overflow: hidden;

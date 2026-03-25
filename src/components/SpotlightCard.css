@@ -9,7 +9,8 @@
   min-height: 280px;
   border-radius: 16px;
   overflow: hidden;
-  background: var(--bg-secondary);
+  background: linear-gradient(145deg, #161616 0%, #0e0e0e 100%);
+  border: 1px solid rgba(255, 214, 0, 0.08);
   cursor: pointer;
 }
 
