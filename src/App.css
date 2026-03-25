@@ -1126,9 +1126,10 @@
 .instructors-header p {
   font-size: 1.125rem;
   color: var(--text-secondary);
-  max-width: 560px;
+  max-width: none;
   margin: 0 auto;
   line-height: 1.6;
+  white-space: nowrap;
 }
 
 .instructor-list {
@@ -1248,6 +1249,11 @@
     margin-bottom: 2.75rem;
   }
 
+  .instructors-header p {
+    white-space: normal;
+    max-width: 600px;
+  }
+
   .instructor-card {
     gap: 2rem;
     padding: 2rem 2rem;
@@ -1273,6 +1279,8 @@
 
   .instructors-header p {
     font-size: 1rem;
+    white-space: normal;
+    max-width: 100%;
   }
 
   .instructor-list {

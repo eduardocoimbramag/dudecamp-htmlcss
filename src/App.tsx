@@ -319,7 +319,7 @@ function App() {
                   <span className="item-icon">🎓</span>
                   <div className="item-details">
                     <h4 className="item-name">Conteúdo do Curso</h4>
-                    <p className="item-description">Formação completa em HTML + CSS</p>
+                    <p className="item-description">Formação completa em <span className="html-color">HTML</span> + <span className="css-color">CSS</span></p>
                   </div>
                 </div>
                 <div className="item-pricing">
@@ -384,7 +384,7 @@ function App() {
                 <div className="item-info">
                   <span className="item-icon">✨</span>
                   <div className="item-details">
-                    <h4 className="item-name">Pack de efeitos CSS</h4>
+                    <h4 className="item-name">Pack de efeitos <span className="css-color">CSS</span></h4>
                   </div>
                 </div>
                 <div className="item-pricing">
@@ -397,7 +397,7 @@ function App() {
                 <div className="item-info">
                   <span className="item-icon">📚</span>
                   <div className="item-details">
-                    <h4 className="item-name">E-book de HTML + CSS</h4>
+                    <h4 className="item-name">E-book de <span className="html-color">HTML</span> + <span className="css-color">CSS</span></h4>
                   </div>
                 </div>
                 <div className="item-pricing">
