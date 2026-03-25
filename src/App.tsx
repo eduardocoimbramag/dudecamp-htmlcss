@@ -22,10 +22,11 @@ function App() {
   const instructorsData = [
     {
       name: 'Eduardo Coimbra',
-      role: 'Fundador & Instrutor Principal',
+      role: 'Software Engineer',
       bio: 'Desenvolvedor front-end com anos de experiência em projetos reais, apaixonado por transformar iniciantes em profissionais capazes de construir interfaces modernas e responsivas. Criador do Dudecamp e responsável por toda a estrutura didática do curso.',
       imageSrc: '/eduardofoto.jpeg',
       imageAlt: 'Foto de Eduardo Coimbra',
+      circularText: 'EDUARDO COIMBRA * DUDECAMP * ',
     },
     {
       name: 'Nome do Instrutor 2',
@@ -33,6 +34,7 @@ function App() {
       bio: 'Placeholder — edite esta bio com a apresentação real do segundo instrutor. Descreva sua experiência, área de atuação e o que ele traz de valor para os alunos do Dudecamp.',
       imageSrc: '/eduardofoto.jpeg',
       imageAlt: 'Foto do segundo instrutor',
+      circularText: 'HTML*CSS*DUDECAMP*CURSO*',
     },
     {
       name: 'Nome do Instrutor 3',
@@ -40,6 +42,7 @@ function App() {
       bio: 'Placeholder — edite esta bio com a apresentação real do terceiro instrutor. Descreva sua experiência, área de atuação e o que ele traz de valor para os alunos do Dudecamp.',
       imageSrc: '/eduardofoto.jpeg',
       imageAlt: 'Foto do terceiro instrutor',
+      circularText: 'HTML*CSS*DUDECAMP*CURSO*',
     },
   ];
 
@@ -50,7 +53,7 @@ function App() {
     },
     {
       question: 'Quais são os requisitos mínimos do meu computador?',
-      answer: 'O HTML e CSS são tecnologias extremamente leves — você não vai precisar de uma máquina potente. Recomendamos no mínimo: 4GB de RAM, processador dual-core (Intel i3, AMD Ryzen 3 ou equivalente) e conexão com a internet. Qualquer computador comprado nos últimos 8 anos já atende com folga. O editor que utilizamos é o VSCode, gratuito e disponível para Windows, Mac e Linux.'
+      answer: <>O <span className="html-color">HTML</span> e <span className="css-color">CSS</span> são tecnologias extremamente leves — você não vai precisar de uma máquina potente. Recomendamos no mínimo: 4GB de RAM, processador dual-core (Intel i3, AMD Ryzen 3 ou equivalente) e conexão com a internet. Qualquer computador comprado nos últimos 8 anos já atende com folga. O editor que utilizamos é o VSCode, gratuito e disponível para Windows, Mac e Linux.</>,
     },
     {
       question: 'O curso tem certificado?',
@@ -446,14 +449,13 @@ function App() {
             {instructorsData.map((instructor, index) => (
               <div key={index} className="instructor-card">
                 <div className="instructor-info">
-                  <span className="instructor-index">0{index + 1}</span>
                   <h3 className="instructor-name">{instructor.name}</h3>
                   <p className="instructor-role">{instructor.role}</p>
                   <p className="instructor-bio">{instructor.bio}</p>
                 </div>
                 <div className="instructor-photo-wrapper">
                   <CircularText
-                    text="HTML*CSS*DUDECAMP*CURSO*"
+                    text={instructor.circularText}
                     spinDuration={20}
                     onHover="speedUp"
                     className="instructor-circular-text"
@@ -489,38 +491,85 @@ function App() {
         </div>
       </section>
 
-      <footer className="footer">
+      <footer id="footer" className="footer">
         <div className="container">
           <div className="footer-content">
-            <div className="footer-column">
+
+            {/* BLOCO DE MARCA */}
+            <div className="footer-column footer-brand">
               <div className="footer-logo">
+                <span className="footer-logo-text">Dudecamp</span>
               </div>
-              <p></p>
+              <p className="footer-tagline">
+                Formação prática em HTML + CSS para quem quer entrar de vez no desenvolvimento web.
+              </p>
             </div>
-            <div className="footer-column">
-              <h4></h4>
+
+            {/* BLOCO DE CONTATO */}
+            <div className="footer-column footer-contact">
+              <h4>Contato</h4>
               <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
+                <li>
+                  <a href="mailto:contato@seudominio.com" className="footer-contact-link">
+                    <span className="footer-contact-icon">✉</span>
+                    contato@seudominio.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/5500000000000"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-contact-link"
+                  >
+                    <span className="footer-contact-icon">💬</span>
+                    (00) 00000-0000
+                  </a>
+                </li>
               </ul>
             </div>
-            <div className="footer-column">
-              <h4></h4>
+
+            {/* BLOCO DE NAVEGAÇÃO */}
+            <div className="footer-column footer-links">
+              <h4>Navegação</h4>
               <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
+                <li><a href="#features">Recursos</a></li>
+                <li><a href="#content">Conteúdo</a></li>
+                <li><a href="#certificate">Certificado</a></li>
+                <li><a href="#enroll">Inscrever-se</a></li>
+                <li><a href="#faq">Dúvidas</a></li>
               </ul>
             </div>
-            <div className="footer-column">
-              <h4></h4>
-              <div className="social-links">
-              </div>
+
+            {/* BLOCO DE INFO DO CURSO */}
+            <div className="footer-column footer-info">
+              <h4>O Curso</h4>
+              <ul className="footer-info-list">
+                <li><span className="footer-info-dot"></span>Curso 100% online</li>
+                <li><span className="footer-info-dot"></span>Acesso vitalício</li>
+                <li><span className="footer-info-dot"></span>Certificado de 60 horas</li>
+                <li><span className="footer-info-dot"></span>Suporte para dúvidas</li>
+                <li><span className="footer-info-dot"></span>Conteúdo 100% prático</li>
+              </ul>
             </div>
+
           </div>
+
+          {/* FAIXA INFERIOR */}
           <div className="footer-bottom">
-            <p></p>
+            <div className="footer-credit">
+              <span>Site desenvolvido por</span>
+              {/* Substitua pelo <img> com sua logo real */}
+              <span className="footer-credit-logo">Dudecamp</span>
+            </div>
+            <a
+              href="https://seulink.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-more-info"
+            >
+              Para mais informações clique aqui →
+            </a>
           </div>
         </div>
       </footer>

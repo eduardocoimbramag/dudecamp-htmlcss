@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import './FaqItem.css';
 
 interface FaqItemProps {
   question: string;
-  answer: string;
+  answer: ReactNode;
 }
 
 function FaqItem({ question, answer }: FaqItemProps) {
