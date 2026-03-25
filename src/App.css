@@ -101,6 +101,10 @@
   margin-bottom: 1rem;
 }
 
+.features .section-header h2 {
+  margin-bottom: 0;
+}
+
 .section-header p {
   font-size: 1.125rem;
   color: var(--text-secondary);
