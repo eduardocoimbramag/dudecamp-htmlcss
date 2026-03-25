@@ -4,7 +4,7 @@
 
 .module-folder {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 214, 0, 0.10);
   border-radius: 6px;
   overflow: hidden;
   transition: all 0.2s ease;
@@ -12,8 +12,8 @@
 }
 
 .module-folder:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 214, 0, 0.24);
+  background: rgba(255, 214, 0, 0.03);
 }
 
 /* ========================================
@@ -57,7 +57,7 @@
 }
 
 .module-number {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 214, 0, 0.60);
   font-size: 0.875rem;
   font-weight: 600;
   flex-shrink: 0;
@@ -73,14 +73,14 @@
 }
 
 .module-duration {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 214, 0, 0.70);
   font-size: 0.8125rem;
   font-weight: 500;
   flex-shrink: 0;
   padding: 0.25rem 0.625rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 214, 0, 0.06);
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 214, 0, 0.14);
 }
 
 /* ========================================
@@ -90,7 +90,7 @@
 .module-topics {
   padding: 0 1.25rem 1rem 1.25rem;
   background: rgba(0, 0, 0, 0.15);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 214, 0, 0.08);
 }
 
 .topic-item {
@@ -102,7 +102,7 @@
 }
 
 .topic-marker {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 214, 0, 0.45);
   font-size: 0.875rem;
   font-weight: 400;
   flex-shrink: 0;
