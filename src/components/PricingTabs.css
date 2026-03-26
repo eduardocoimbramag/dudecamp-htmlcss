@@ -41,7 +41,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  background: linear-gradient(90deg, #e6c200, #FFD600);
   transform: scaleX(0);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -53,8 +53,8 @@
 }
 
 .tab-button.active {
-  background: rgba(37, 99, 235, 0.15);
-  border-color: rgba(37, 99, 235, 0.5);
+  background: rgba(255, 214, 0, 0.08);
+  border-color: rgba(255, 214, 0, 0.40);
 }
 
 .tab-button.active::before {
@@ -90,7 +90,7 @@
 
 .tabs-content {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 214, 0, 0.10);
   border-radius: 16px;
   padding: 2.5rem;
   min-height: 400px;
@@ -142,7 +142,7 @@
 
 .value-item:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 214, 0, 0.18);
 }
 
 .value-item.with-price {
@@ -151,7 +151,7 @@
 
 .item-check {
   font-size: 1.25rem;
-  color: #10b981;
+  color: #FFD600;
   flex-shrink: 0;
 }
 
@@ -170,17 +170,17 @@
 }
 
 .item-price.paid {
-  color: #3b82f6;
+  color: #FFD600;
   font-size: 1.25rem;
 }
 
 .item-price.free {
-  color: #10b981;
+  color: #FFD600;
   font-size: 1rem;
   padding: 0.25rem 0.75rem;
-  background: rgba(16, 185, 129, 0.15);
+  background: rgba(255, 214, 0, 0.08);
   border-radius: 6px;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(255, 214, 0, 0.22);
 }
 
 /* ========================================
@@ -193,8 +193,8 @@
   align-items: center;
   margin-top: 2rem;
   padding: 1.5rem;
-  background: rgba(37, 99, 235, 0.1);
-  border: 2px solid rgba(37, 99, 235, 0.3);
+  background: rgba(255, 214, 0, 0.07);
+  border: 2px solid rgba(255, 214, 0, 0.28);
   border-radius: 12px;
 }
 
@@ -207,14 +207,14 @@
 .total-amount {
   font-size: 2rem;
   font-weight: 700;
-  color: #3b82f6;
+  color: #FFD600;
 }
 
 .investment-highlight {
   margin-top: 2rem;
   padding: 1.5rem;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.1));
-  border: 2px solid rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.08), rgba(255, 214, 0, 0.04));
+  border: 2px solid rgba(255, 214, 0, 0.25);
   border-radius: 12px;
   text-align: center;
 }
@@ -222,7 +222,7 @@
 .highlight-text {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #10b981;
+  color: #FFD600;
   margin: 0;
   line-height: 1.6;
 }
