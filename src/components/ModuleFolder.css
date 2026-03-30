@@ -8,7 +8,7 @@
   border-radius: 6px;
   overflow: hidden;
   transition: all 0.2s ease;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: var(--font-mono);
 }
 
 .module-folder:hover {
@@ -106,7 +106,7 @@
   font-size: 0.875rem;
   font-weight: 400;
   flex-shrink: 0;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: var(--font-mono);
 }
 
 .topic-text {

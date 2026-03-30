@@ -162,7 +162,7 @@
   font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--text-secondary);
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: var(--font-mono);
   margin: 0;
   flex: 1;
   position: relative;

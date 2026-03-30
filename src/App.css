@@ -109,6 +109,7 @@
 .section-header p {
   font-size: 1.125rem;
   color: var(--text-secondary);
+  font-family: var(--font-mono);
 }
 
 .features-grid {
@@ -201,10 +202,11 @@
 
 .about-promise {
   color: white;
-  font-size: clamp(1.125rem, 2.2vw, 1.5rem);
-  line-height: 1.6;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.75;
   margin-bottom: 0;
   font-weight: 400;
+  font-family: var(--font-mono);
 }
 
 .highlight-yellow {
@@ -359,8 +361,9 @@
   font-size: 0.8125rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.48);
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 0;
+  font-family: var(--font-mono);
 }
 
 /* RESPONSIVIDADE MÉTRICAS - TABLET */
@@ -448,7 +451,7 @@
   color: rgba(255, 255, 255, 0.6);
   font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
   font-weight: 400;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: var(--font-mono);
 }
 
 /* ========================================
@@ -498,9 +501,10 @@
 
 .certificate-description {
   font-size: 1.0625rem;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
 }
 
 .certificate-description:last-child {
@@ -524,10 +528,11 @@
 }
 
 .certificate-tip p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.9375rem;
+  line-height: 1.7;
   color: rgba(255, 255, 255, 0.75);
   margin: 0;
+  font-family: var(--font-mono);
 }
 
 .certificate-tip strong {
@@ -1248,8 +1253,9 @@
 }
 
 .instructors-header p {
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   color: var(--text-secondary);
+  font-family: var(--font-mono);
   max-width: none;
   margin: 0 auto;
   line-height: 1.6;
@@ -1318,9 +1324,10 @@
 }
 
 .instructor-bio {
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 0.9375rem;
+  line-height: 1.8;
   color: var(--text-secondary);
+  font-family: var(--font-mono);
   max-width: 560px;
 }
 
