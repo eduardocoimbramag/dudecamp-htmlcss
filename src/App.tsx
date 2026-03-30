@@ -215,6 +215,7 @@ function App() {
                   alt="Dudecamp - Formação HTML + CSS"
                   loading="lazy"
                 />
+                <div className="dev-text-overlay">Você DEV.</div>
               </div>
             </div>
           </div>
