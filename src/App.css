@@ -112,6 +112,10 @@
   font-family: var(--font-mono);
 }
 
+.features .section-header {
+  margin-bottom: 2rem;
+}
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -144,11 +148,11 @@
 
 .features-cta {
   text-align: center;
-  margin-top: 2.5rem;
+  margin-top: 1.25rem;
 }
 
-.cta-button--compact {
-  padding: 1rem 2.25rem;
+.cta-button.cta-button--compact {
+  padding: 0.75rem 1.5rem;
   font-size: 1.0625rem;
 }
 
@@ -276,6 +280,7 @@
   display: flex;
   width: fit-content;
   margin: 2rem auto 0;
+  padding: 0.75rem 1.5rem;
 }
 
 .typing-wrapper {
@@ -663,13 +668,13 @@
 .content-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 1.5rem;
 }
 
 .content-header h2 {
   color: white;
   font-size: clamp(2rem, 4vw, 2.5rem);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
   font-weight: 600;
 }
 
@@ -922,7 +927,7 @@
   font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.4);
   text-decoration: line-through;
-  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-decoration-color: #ef4444;
   text-decoration-thickness: 2px;
   font-weight: 500;
 }
@@ -1000,7 +1005,7 @@
 .price-value.strikethrough {
   color: rgba(255, 255, 255, 0.5);
   text-decoration: line-through;
-  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-decoration-color: #ef4444;
   text-decoration-thickness: 3px;
 }
 
@@ -1148,6 +1153,20 @@
 
 .cta-button:active {
   transform: translateY(-1px) scale(0.98);
+}
+
+.enroll .cta-button {
+  background: linear-gradient(135deg, #22C55E, #16A34A);
+  color: #ffffff;
+  box-shadow: 
+    0 10px 30px rgba(34, 197, 94, 0.35),
+    0 0 0 0 rgba(34, 197, 94, 0.4);
+}
+
+.enroll .cta-button:hover {
+  box-shadow: 
+    0 15px 40px rgba(34, 197, 94, 0.45),
+    0 0 0 8px rgba(34, 197, 94, 0.15);
 }
 
 .cta-icon {

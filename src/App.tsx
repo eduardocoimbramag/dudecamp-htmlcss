@@ -500,8 +500,8 @@ function App() {
 
           <div className="cta-wrapper">
             <a href="#checkout" className="cta-button">
-              <span className="cta-icon">🚀</span>
               <span className="cta-text">Quero me inscrever agora</span>
+              <span className="cta-icon">🚀</span>
             </a>
             <p className="cta-subtitle">Acesso imediato após a confirmação do pagamento</p>
           </div>
