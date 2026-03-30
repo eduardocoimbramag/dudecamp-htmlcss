@@ -176,12 +176,12 @@ function App() {
   ];
 
   const metricsData = [
-    { value: '+1.500', label: 'Alunos', emoji: '🎮' },
-    { value: '97%', label: 'Conclusão', emoji: '🏆' },
-    { value: '4.8/5', label: 'Estrelas', emoji: '⭐' },
-    { value: '+20', label: 'Projetos', emoji: '🛠️' },
-    { value: '24H', label: 'Suporte', emoji: '💬' },
-    { value: '100%', label: 'Vitalício', emoji: '⏳' },
+    { headline: '+1.500 Alunos', emoji: '🎮', legend: 'Mais de 1.500 pessoas escolheram transformaram suas carreiras' },
+    { headline: '97% de Conclusão', emoji: '🏆', legend: 'Essas pessoas não apenas começaram, elas terminaram e já têm seu certificado em mãos' },
+    { headline: '4.8/5 de avaliação', emoji: '⭐', legend: 'Alunos satisfeitos que estão colocando em prática' },
+    { headline: '+20 Projetos', emoji: '🛠️', legend: 'Projetos reais que você constrói do zero até o fim e pode faturar com eles' },
+    { headline: 'Suporte 24H', emoji: '💬', legend: 'Você nunca vai ficar travado, sempre haverá alguém da nossa equipe para te ajudar' },
+    { headline: '100% Vitalício', emoji: '⏳', legend: 'Pague uma vez e estude para o resto da vida, sempre com as atualizações recorrentes' },
   ];
 
   return (
@@ -227,8 +227,8 @@ function App() {
             {metricsData.map((metric, index) => (
               <div key={index} className="metric-card">
                 <span className="metric-emoji">{metric.emoji}</span>
-                <span className="metric-value">{metric.value}</span>
-                <span className="metric-label">{metric.label}</span>
+                <span className="metric-headline">{metric.headline}</span>
+                <p className="metric-legend">{metric.legend}</p>
               </div>
             ))}
           </div>
