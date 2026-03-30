@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 import Hero from './components/Hero'
 import AsideMenu from './components/AsideMenu'
@@ -8,6 +9,46 @@ import Certificate3D from './components/Certificate3D'
 import CircularText from './components/CircularText'
 
 function App() {
+  const [typingText, setTypingText] = useState('');
+
+  useEffect(() => {
+    const fullText = 'Quero fazer parte do time';
+    let charIndex = 0;
+    let isErasing = false;
+    let active = true;
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    const tick = () => {
+      if (!active) return;
+      if (!isErasing) {
+        setTypingText(fullText.slice(0, charIndex));
+        if (charIndex < fullText.length) {
+          charIndex++;
+          timeoutId = setTimeout(tick, 65);
+        } else {
+          timeoutId = setTimeout(() => { isErasing = true; tick(); }, 3200);
+        }
+      } else {
+        setTypingText(fullText.slice(0, charIndex));
+        if (charIndex > 0) {
+          charIndex--;
+          timeoutId = setTimeout(tick, 30);
+        } else {
+          isErasing = false;
+          timeoutId = setTimeout(tick, 300);
+        }
+      }
+    };
+
+    timeoutId = setTimeout(tick, 800);
+    return () => { active = false; clearTimeout(timeoutId); };
+  }, []);
+
+  const handleScrollToEnroll = () => {
+    const el = document.getElementById('enroll');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const menuItems = [
     { id: 'about', label: 'Sobre' },
     { id: 'metrics', label: 'Métricas' },
@@ -206,6 +247,15 @@ function App() {
               <p className="about-promise">
                 Vou te mostrar como <span className="highlight-yellow">lucrar + de R$10 mil por mês</span> trabalhando no conforto da sua casa, sem ter que investir e com risco zero.
               </p>
+              <button
+                className="cta-button about-section-cta"
+                onClick={handleScrollToEnroll}
+                aria-label="Quero fazer parte do time"
+              >
+                <span className="cta-text">
+                  {typingText}<span className="typing-cursor" aria-hidden="true">|</span>
+                </span>
+              </button>
             </div>
             
             <div className="about-image">
@@ -251,6 +301,12 @@ function App() {
                   description={feature.description}
                 />
               ))}
+            </div>
+            <div className="features-cta">
+              <button className="cta-button cta-button--compact" onClick={handleScrollToEnroll}>
+                <span className="cta-icon">🚀</span>
+                <span className="cta-text">Quero me inscrever agora</span>
+              </button>
             </div>
           </div>
         </section>
