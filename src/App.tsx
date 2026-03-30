@@ -12,7 +12,7 @@ function App() {
   const [typingText, setTypingText] = useState('');
 
   useEffect(() => {
-    const fullText = 'Quero fazer parte do time';
+    const chars = Array.from('Quero fazer parte do time !!!');
     let charIndex = 0;
     let isErasing = false;
     let active = true;
@@ -21,15 +21,15 @@ function App() {
     const tick = () => {
       if (!active) return;
       if (!isErasing) {
-        setTypingText(fullText.slice(0, charIndex));
-        if (charIndex < fullText.length) {
+        setTypingText(chars.slice(0, charIndex).join(''));
+        if (charIndex < chars.length) {
           charIndex++;
           timeoutId = setTimeout(tick, 65);
         } else {
-          timeoutId = setTimeout(() => { isErasing = true; tick(); }, 3200);
+          timeoutId = setTimeout(() => { isErasing = true; tick(); }, 7100);
         }
       } else {
-        setTypingText(fullText.slice(0, charIndex));
+        setTypingText(chars.slice(0, charIndex).join(''));
         if (charIndex > 0) {
           charIndex--;
           timeoutId = setTimeout(tick, 30);
@@ -250,10 +250,13 @@ function App() {
               <button
                 className="cta-button about-section-cta"
                 onClick={handleScrollToEnroll}
-                aria-label="Quero fazer parte do time"
+                aria-label="Quero fazer parte do time !!!"
               >
-                <span className="cta-text">
-                  {typingText}<span className="typing-cursor" aria-hidden="true">|</span>
+                <span className="typing-wrapper" aria-hidden="true">
+                  <span className="typing-sizer">Quero fazer parte do time !!!</span>
+                  <span className="typing-live">
+                    {typingText}<span className="typing-cursor">|</span>
+                  </span>
                 </span>
               </button>
             </div>
