@@ -9,8 +9,9 @@ import CircularText from './components/CircularText'
 
 function App() {
   const menuItems = [
-    { id: 'features', label: 'Recursos' },
     { id: 'about', label: 'Sobre' },
+    { id: 'metrics', label: 'Métricas' },
+    { id: 'features', label: 'Recursos' },
     { id: 'content', label: 'Conteúdo' },
     { id: 'certificate', label: 'Certificado' },
     { id: 'enroll', label: 'Inscrever-se' },
@@ -174,6 +175,15 @@ function App() {
     },
   ];
 
+  const metricsData = [
+    { value: '+1.500', label: 'Alunos', emoji: '🎮' },
+    { value: '97%', label: 'Conclusão', emoji: '🏆' },
+    { value: '4.8/5', label: 'Estrelas', emoji: '⭐' },
+    { value: '+20', label: 'Projetos', emoji: '🛠️' },
+    { value: '24H', label: 'Suporte', emoji: '💬' },
+    { value: '100%', label: 'Vitalício', emoji: '⏳' },
+  ];
+
   return (
     <>
       <Hero />
@@ -181,25 +191,6 @@ function App() {
       <AsideMenu menuItems={menuItems} />
 
       <div className="main-content">
-        <section id="features" className="features">
-          <div className="container">
-            <div className="section-header">
-              <h2>Recursos Exclusivos</h2>
-              <p>Tudo que você precisa para dominar <span className="html-color">HTML</span> + <span className="css-color">CSS</span></p>
-            </div>
-            <div className="features-grid">
-              {featuresData.map((feature, index) => (
-                <SpotlightCard
-                  key={index}
-                  title={feature.title}
-                  titleColor={feature.titleColor}
-                  description={feature.description}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
       <section id="about" className="about">
         <div className="container">
           <div className="about-content">
@@ -229,6 +220,39 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section id="metrics" className="metrics">
+        <div className="container">
+          <div className="metrics-grid">
+            {metricsData.map((metric, index) => (
+              <div key={index} className="metric-card">
+                <span className="metric-emoji">{metric.emoji}</span>
+                <span className="metric-value">{metric.value}</span>
+                <span className="metric-label">{metric.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+        <section id="features" className="features">
+          <div className="container">
+            <div className="section-header">
+              <h2>Recursos Exclusivos</h2>
+              <p>Tudo que você precisa para dominar <span className="html-color">HTML</span> + <span className="css-color">CSS</span></p>
+            </div>
+            <div className="features-grid">
+              {featuresData.map((feature, index) => (
+                <SpotlightCard
+                  key={index}
+                  title={feature.title}
+                  titleColor={feature.titleColor}
+                  description={feature.description}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
 
       <section id="content" className="content">
         <div className="container">
