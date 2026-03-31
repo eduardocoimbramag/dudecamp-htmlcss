@@ -1486,14 +1486,14 @@
 
 .instructors-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .instructors-header h2 {
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
   line-height: 1.2;
 }
 
@@ -1557,7 +1557,7 @@
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.2;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
 }
 
 .instructor-role {
@@ -1650,7 +1650,7 @@
 
 @media (max-width: 640px) {
   .instructors-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .instructors-header p {
@@ -1726,8 +1726,9 @@
 
 .faq-header p {
   font-size: clamp(1rem, 2vw, 1.125rem);
-  color: var(--text-secondary);
+  color: #FFD600;
   font-weight: 400;
+  font-family: var(--font-mono);
 }
 
 .faq-list {
