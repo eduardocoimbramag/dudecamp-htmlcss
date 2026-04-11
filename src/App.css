@@ -1070,23 +1070,23 @@
 .installment-value {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
-  color: #FFD600;
+  color: #22C55E;
   line-height: 1;
   position: relative;
   z-index: 1;
-  text-shadow: 0 0 40px rgba(255, 214, 0, 0.50);
+  text-shadow: 0 0 40px rgba(34, 197, 94, 0.50);
   letter-spacing: -0.02em;
 }
 
 .installment-badge {
   display: inline-block;
   padding: 0.5rem 1.25rem;
-  background: rgba(255, 214, 0, 0.15);
-  border: 2px solid rgba(255, 214, 0, 0.35);
+  background: rgba(34, 197, 94, 0.15);
+  border: 2px solid rgba(34, 197, 94, 0.35);
   border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 700;
-  color: #FFD600;
+  color: #22C55E;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   position: relative;
@@ -1925,22 +1925,11 @@
   color: #9ca3af;
 }
 
-.footer-credit-logo {
-  font-weight: 700;
-  font-size: 0.9375rem;
-  color: #6b7280;
-}
-
-.footer-more-info {
-  font-size: 0.875rem;
-  color: #9ca3af;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  white-space: nowrap;
-}
-
-.footer-more-info:hover {
-  color: #2563eb;
+.footer-credit-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* --- Social links (reservado para uso futuro) --- */

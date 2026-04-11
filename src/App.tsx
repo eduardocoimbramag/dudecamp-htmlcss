@@ -629,17 +629,8 @@ function App() {
           <div className="footer-bottom">
             <div className="footer-credit">
               <span>Site desenvolvido por</span>
-              {/* Substitua pelo <img> com sua logo real */}
-              <span className="footer-credit-logo">Dudecamp</span>
+              <img src="/md-blacklogo1.png" alt="Dudecamp" className="footer-credit-logo-img" />
             </div>
-            <a
-              href="https://seulink.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-more-info"
-            >
-              Para mais informações clique aqui →
-            </a>
           </div>
         </div>
       </footer>
