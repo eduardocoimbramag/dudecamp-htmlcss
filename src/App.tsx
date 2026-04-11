@@ -493,7 +493,7 @@ function App() {
 
             <div className="installment-highlight">
               <span className="installment-label">ou em</span>
-              <span className="installment-value">12x <span className="installment-conjunction">de</span> R$ 6,50</span>
+              <span className="installment-value">10x <span className="installment-conjunction">de</span> R$ 7,50</span>
               <span className="installment-badge">SEM JUROS</span>
             </div>
           </div>
@@ -504,6 +504,21 @@ function App() {
               <span className="cta-icon">🚀</span>
             </a>
             <p className="cta-subtitle">Acesso imediato após a confirmação do pagamento</p>
+          </div>
+
+          <div className="guarantee-block">
+            <div className="guarantee-text">
+              <h3 className="guarantee-headline">Se você não gostar eu devolvo seu dinheiro.</h3>
+              <p className="guarantee-description">Se por algum motivo você comprar esse produto e não se sentir satisfeito, é só solicitar que eu devolvo todo o seu investimento sem burocracia.</p>
+            </div>
+            <div className="guarantee-badge">
+              <span className="guarantee-number">7</span>
+              <div className="guarantee-info">
+                <span className="guarantee-days">Dias de</span>
+                <span className="guarantee-label">Garantia</span>
+                <div className="guarantee-stars">★★★★★</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -1189,6 +1189,93 @@
 }
 
 /* ========================================
+   BLOCO DE GARANTIA
+   ======================================== */
+
+.guarantee-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.guarantee-text {
+  flex: 1;
+}
+
+.guarantee-headline {
+  font-size: clamp(1.125rem, 2.2vw, 1.625rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 0.4375rem;
+}
+
+.guarantee-description {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+  font-family: var(--font-mono);
+  margin: 0;
+}
+
+.guarantee-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+}
+
+.guarantee-number {
+  font-size: clamp(5rem, 9vw, 8rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  background: linear-gradient(175deg, #ffffff 30%, rgba(255, 255, 255, 0.50) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+.guarantee-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.guarantee-days {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.guarantee-label {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.guarantee-stars {
+  font-size: 1.375rem;
+  color: #FFD600;
+  letter-spacing: 3px;
+}
+
+/* ========================================
    RESPONSIVIDADE - TABLET
    ======================================== */
 
@@ -1307,6 +1394,11 @@
   .cta-button {
     padding: 1.25rem 2.5rem;
     font-size: 1.125rem;
+  }
+
+  .guarantee-block {
+    gap: 1rem;
+    padding: 1rem 1rem;
   }
 }
 
@@ -1472,6 +1564,27 @@
 
   .cta-subtitle {
     font-size: 0.875rem;
+  }
+
+  .guarantee-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.875rem 0.75rem;
+    gap: 1.75rem;
+  }
+
+  .guarantee-text {
+    max-width: 100%;
+  }
+
+  .guarantee-badge {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .guarantee-number {
+    font-size: clamp(4.5rem, 15vw, 6rem);
   }
 }
 
