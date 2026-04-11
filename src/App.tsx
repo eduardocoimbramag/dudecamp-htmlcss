@@ -493,7 +493,7 @@ function App() {
 
             <div className="installment-highlight">
               <span className="installment-label">ou em</span>
-              <span className="installment-value">12x de R$ 6,50</span>
+              <span className="installment-value">12x <span className="installment-conjunction">de</span> R$ 6,50</span>
               <span className="installment-badge">SEM JUROS</span>
             </div>
           </div>
