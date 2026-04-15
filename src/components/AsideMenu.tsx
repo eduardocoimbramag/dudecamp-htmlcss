@@ -17,26 +17,31 @@ function AsideMenu({ menuItems }: AsideMenuProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const heroSection = document.querySelector('.hero-section');
+    const heroSection = document.querySelector('.hero-section') as HTMLElement | null;
+
     if (!heroSection) {
       setIsVisible(true);
       return;
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(!entry.isIntersecting);
-      },
-      {
-        threshold: 0,
-        rootMargin: '0px 0px 0px 0px',
-      }
-    );
+    let heroHeight = heroSection.offsetHeight;
 
-    observer.observe(heroSection);
+    const check = () => {
+      setIsVisible(window.scrollY >= heroHeight);
+    };
+
+    const onResize = () => {
+      heroHeight = heroSection.offsetHeight;
+      check();
+    };
+
+    check();
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', onResize, { passive: true });
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener('scroll', check);
+      window.removeEventListener('resize', onResize);
     };
   }, []);
 
