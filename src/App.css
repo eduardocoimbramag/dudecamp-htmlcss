@@ -1183,9 +1183,9 @@
 .cta-subtitle {
   margin-top: 0.625rem;
   font-size: 0.9375rem;
-  color: #FFD600;
+  color: #ffffff;
   font-weight: 400;
-  text-shadow: 0 0 20px rgba(255, 214, 0, 0.35);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
 }
 
 /* ========================================
