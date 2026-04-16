@@ -1,46 +1,56 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import './Certificate3D.css';
 
 function Certificate3D() {
-  const [rotation, setRotation] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const hintRef = useRef<HTMLParagraphElement>(null);
+  const isDraggingRef = useRef(false);
   const startXRef = useRef(0);
-  const currentRotationRef = useRef(0);
+  const rotationRef = useRef(0);
+  const baseRotationRef = useRef(0);
+
+  const applyRotation = (deg: number) => {
+    if (wrapperRef.current) wrapperRef.current.style.transform = `rotateY(${deg}deg)`;
+  };
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
+    isDraggingRef.current = true;
     startXRef.current = e.clientX;
-    currentRotationRef.current = rotation;
+    baseRotationRef.current = rotationRef.current;
+    if (wrapperRef.current) wrapperRef.current.style.transition = 'none';
+    if (hintRef.current) hintRef.current.textContent = '↔ Arraste para girar';
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    
-    const deltaX = e.clientX - startXRef.current;
-    const rotationChange = deltaX * 0.5;
-    setRotation(currentRotationRef.current + rotationChange);
+    if (!isDraggingRef.current) return;
+    rotationRef.current = baseRotationRef.current + (e.clientX - startXRef.current) * 0.5;
+    applyRotation(rotationRef.current);
   };
 
   const handleMouseUp = () => {
-    setIsDragging(false);
+    isDraggingRef.current = false;
+    if (wrapperRef.current) wrapperRef.current.style.transition = '';
+    if (hintRef.current) hintRef.current.textContent = '👆 Clique e arraste para girar o certificado';
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true);
+    isDraggingRef.current = true;
     startXRef.current = e.touches[0].clientX;
-    currentRotationRef.current = rotation;
+    baseRotationRef.current = rotationRef.current;
+    if (wrapperRef.current) wrapperRef.current.style.transition = 'none';
+    if (hintRef.current) hintRef.current.textContent = '↔ Arraste para girar';
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    
-    const deltaX = e.touches[0].clientX - startXRef.current;
-    const rotationChange = deltaX * 0.5;
-    setRotation(currentRotationRef.current + rotationChange);
+    if (!isDraggingRef.current) return;
+    rotationRef.current = baseRotationRef.current + (e.touches[0].clientX - startXRef.current) * 0.5;
+    applyRotation(rotationRef.current);
   };
 
   const handleTouchEnd = () => {
-    setIsDragging(false);
+    isDraggingRef.current = false;
+    if (wrapperRef.current) wrapperRef.current.style.transition = '';
+    if (hintRef.current) hintRef.current.textContent = '👆 Clique e arraste para girar o certificado';
   };
 
   return (
@@ -56,7 +66,7 @@ function Certificate3D() {
     >
       <div 
         className="certificate-wrapper"
-        style={{ transform: `rotateY(${rotation}deg)` }}
+        ref={wrapperRef}
       >
         <div className="certificate-side certificate-front">
           <div className="cert-inner">
@@ -119,8 +129,8 @@ function Certificate3D() {
         </div>
       </div>
 
-      <p className="interaction-hint">
-        {isDragging ? '↔ Arraste para girar' : '👆 Clique e arraste para girar o certificado'}
+      <p className="interaction-hint" ref={hintRef}>
+        👆 Clique e arraste para girar o certificado
       </p>
     </div>
   );

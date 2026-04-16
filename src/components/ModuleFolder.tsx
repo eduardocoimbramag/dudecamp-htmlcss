@@ -30,8 +30,8 @@ function ModuleFolder({ number, title, duration, topics }: ModuleFolderProps) {
       
       {topics && topics.length > 0 && isExpanded && (
         <div className="module-topics">
-          {topics.map((topic, index) => (
-            <div key={index} className="topic-item">
+          {topics.map((topic) => (
+            <div key={topic} className="topic-item">
               <span className="topic-marker">└─</span>
               <span className="topic-text">{topic}</span>
             </div>

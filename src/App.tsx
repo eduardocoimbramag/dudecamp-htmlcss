@@ -30,6 +30,26 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const folders = document.querySelectorAll<HTMLElement>('.module-folder');
+    folders.forEach((el, i) => {
+      el.style.setProperty('--folder-delay', `${i * 50}ms`);
+    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    folders.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   const handleScrollToEnroll = () => {
     const el = document.getElementById('enroll');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
