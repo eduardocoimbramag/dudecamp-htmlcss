@@ -131,7 +131,7 @@ export default function MagicRings({
     let renderer!: THREE.WebGLRenderer;
 
     try {
-      renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false, powerPreference: 'high-performance' });
     } catch {
       return;
     }
@@ -210,7 +210,6 @@ export default function MagicRings({
     };
 
     resize();
-    window.addEventListener('resize', resize);
 
     const ro = new ResizeObserver(resize);
     ro.observe(mount);
@@ -285,7 +284,6 @@ export default function MagicRings({
       stopLoop();
       document.removeEventListener('visibilitychange', onVisibilityChange);
       io.disconnect();
-      window.removeEventListener('resize', resize);
       ro.disconnect();
       mount.removeEventListener('mousemove', onMouseMove);
       mount.removeEventListener('mouseenter', onMouseEnter);

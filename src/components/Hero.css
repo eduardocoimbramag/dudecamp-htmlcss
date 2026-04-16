@@ -64,8 +64,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 220%;
-  height: 220%;
+  width: 180%;
+  height: 180%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: radial-gradient(
