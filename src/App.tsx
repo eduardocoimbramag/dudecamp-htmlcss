@@ -76,20 +76,12 @@ function App() {
       circularText: 'EDUARDO COIMBRA * DUDECAMP * ',
     },
     {
-      name: 'Nome do Instrutor 2',
+      name: 'Cauã Rego',
       role: 'Instrutor de Desenvolvimento Web',
-      bio: 'Placeholder — edite esta bio com a apresentação real do segundo instrutor. Descreva sua experiência, área de atuação e o que ele traz de valor para os alunos do Dudecamp.',
-      imageSrc: '/eduardofoto.jpeg',
-      imageAlt: 'Foto do segundo instrutor',
-      circularText: 'HTML*CSS*DUDECAMP*CURSO*',
-    },
-    {
-      name: 'Nome do Instrutor 3',
-      role: 'Instrutor de Desenvolvimento Web',
-      bio: 'Placeholder — edite esta bio com a apresentação real do terceiro instrutor. Descreva sua experiência, área de atuação e o que ele traz de valor para os alunos do Dudecamp.',
-      imageSrc: '/eduardofoto.jpeg',
-      imageAlt: 'Foto do terceiro instrutor',
-      circularText: 'HTML*CSS*DUDECAMP*CURSO*',
+      bio: 'Placeholder — edite esta bio com a apresentação real de Cauã Rego. Descreva sua experiência, área de atuação e o que ele traz de valor para os alunos do Dudecamp.',
+      imageSrc: '/cauafoto.webp',
+      imageAlt: 'Foto de Cauã Rego',
+      circularText: 'CAUÃ REGO * DUDECAMP * ',
     },
   ];
 
@@ -388,7 +380,7 @@ function App() {
                   <CircularText
                     text={instructor.circularText}
                     spinDuration={20}
-                    onHover="speedUp"
+                    onHover="none"
                     className="instructor-circular-text"
                   />
                   <img

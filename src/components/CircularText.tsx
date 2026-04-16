@@ -3,7 +3,7 @@ import { motion, useAnimation, useMotionValue } from 'motion/react';
 
 import './CircularText.css';
 
-type OnHoverBehavior = 'slowDown' | 'speedUp' | 'pause' | 'goBonkers';
+type OnHoverBehavior = 'slowDown' | 'speedUp' | 'pause' | 'goBonkers' | 'none';
 
 interface CircularTextProps {
   text: string;
@@ -52,7 +52,7 @@ const CircularText = ({
 
   const handleHoverStart = () => {
     const start = rotation.get();
-    if (!onHover) return;
+    if (!onHover || onHover === 'none') return;
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let transitionConfig: any;
