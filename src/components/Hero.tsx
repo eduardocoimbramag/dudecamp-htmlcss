@@ -1,8 +1,18 @@
+import { useRef } from 'react';
 import MagicRings from './MagicRings';
+import TargetCursor from './TargetCursor';
+import './Hero.css';
 
 function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section
+      ref={heroRef}
       className="hero-section"
       style={{
         position: 'relative',
@@ -37,6 +47,46 @@ function Hero() {
           clickBurst={false}
         />
       </div>
+
+      <div className="hero-overlay">
+        <div className="hero-content">
+          <div className="hero-logo-wrap">
+            <img
+              src="/Dudecamp.png"
+              alt="Dudecamp"
+              className="hero-logo"
+              draggable={false}
+            />
+          </div>
+
+          <p className="hero-subtitle cursor-target">
+            Aprenda HTML + CSS do zero e construa projetos com visual profissional.
+          </p>
+
+          <div className="hero-cta-group">
+            <button
+              className="hero-btn hero-btn--primary cursor-target"
+              onClick={() => scrollTo('enroll')}
+            >
+              Quero me inscrever agora
+            </button>
+            <button
+              className="hero-btn hero-btn--ghost cursor-target"
+              onClick={() => scrollTo('about')}
+            >
+              Ver conteúdo do curso
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <TargetCursor
+        containerRef={heroRef}
+        spinDuration={2}
+        hideDefaultCursor={true}
+        parallaxOn={false}
+        hoverDuration={0.2}
+      />
     </section>
   );
 }
