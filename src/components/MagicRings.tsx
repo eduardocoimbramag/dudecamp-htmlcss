@@ -181,6 +181,24 @@ export default function MagicRings({
     const quad = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
     scene.add(quad);
 
+    uniforms.uAttenuation.value = attenuation;
+    uColor.set(color);
+    uColorTwo.set(colorTwo);
+    uniforms.uLineThickness.value = lineThickness;
+    uniforms.uBaseRadius.value = baseRadius;
+    uniforms.uRadiusStep.value = radiusStep;
+    uniforms.uScaleRate.value = scaleRate;
+    uniforms.uRingCount.value = ringCount;
+    uniforms.uOpacity.value = opacity;
+    uniforms.uNoiseAmount.value = noiseAmount;
+    uniforms.uRotation.value = (rotation * Math.PI) / 180;
+    uniforms.uRingGap.value = ringGap;
+    uniforms.uFadeIn.value = fadeIn;
+    uniforms.uFadeOut.value = fadeOut;
+    uniforms.uMouseInfluence.value = followMouse ? mouseInfluence : 0;
+    uniforms.uHoverScale.value = hoverScale;
+    uniforms.uParallax.value = parallax;
+
     const resize = () => {
       const w = mount.clientWidth;
       const h = mount.clientHeight;
@@ -229,25 +247,8 @@ export default function MagicRings({
       if (burstRef.current < 0.001) burstRef.current = 0;
 
       uniforms.uTime.value = t * 0.001 * (p.speed ?? 1);
-      uniforms.uAttenuation.value = p.attenuation ?? 10;
-      uColor.set(p.color ?? '#ffffff');
-      uColorTwo.set(p.colorTwo ?? '#ffffff');
-      uniforms.uLineThickness.value = p.lineThickness ?? 2;
-      uniforms.uBaseRadius.value = p.baseRadius ?? 0.35;
-      uniforms.uRadiusStep.value = p.radiusStep ?? 0.1;
-      uniforms.uScaleRate.value = p.scaleRate ?? 0.1;
-      uniforms.uRingCount.value = p.ringCount ?? 6;
-      uniforms.uOpacity.value = p.opacity ?? 1;
-      uniforms.uNoiseAmount.value = p.noiseAmount ?? 0.1;
-      uniforms.uRotation.value = ((p.rotation ?? 0) * Math.PI) / 180;
-      uniforms.uRingGap.value = p.ringGap ?? 1.5;
-      uniforms.uFadeIn.value = p.fadeIn ?? 0.7;
-      uniforms.uFadeOut.value = p.fadeOut ?? 0.5;
       uMouse.set(smoothMouseRef.current[0], smoothMouseRef.current[1]);
-      uniforms.uMouseInfluence.value = p.followMouse ? (p.mouseInfluence ?? 0.2) : 0;
       uniforms.uHoverAmount.value = hoverAmountRef.current;
-      uniforms.uHoverScale.value = p.hoverScale ?? 1.2;
-      uniforms.uParallax.value = p.parallax ?? 0.05;
       uniforms.uBurst.value = p.clickBurst ? burstRef.current : 0;
 
       renderer.render(scene, camera);
