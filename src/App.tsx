@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import './App.css'
 import Hero from './components/Hero'
 import AsideMenu from './components/AsideMenu'
@@ -7,41 +7,27 @@ import ModuleFolder from './components/ModuleFolder'
 import FaqItem from './components/FaqItem'
 import Certificate3D from './components/Certificate3D'
 import CircularText from './components/CircularText'
+import TypingCTAButton from './components/TypingCTAButton'
 
 function App() {
-  const [typingText, setTypingText] = useState('');
-
   useEffect(() => {
-    const chars = Array.from('Quero fazer parte do time !!!');
-    let charIndex = 0;
-    let isErasing = false;
-    let active = true;
-    let timeoutId: ReturnType<typeof setTimeout>;
-
-    const tick = () => {
-      if (!active) return;
-      if (!isErasing) {
-        setTypingText(chars.slice(0, charIndex).join(''));
-        if (charIndex < chars.length) {
-          charIndex++;
-          timeoutId = setTimeout(tick, 65);
-        } else {
-          timeoutId = setTimeout(() => { isErasing = true; tick(); }, 7100);
-        }
-      } else {
-        setTypingText(chars.slice(0, charIndex).join(''));
-        if (charIndex > 0) {
-          charIndex--;
-          timeoutId = setTimeout(tick, 30);
-        } else {
-          isErasing = false;
-          timeoutId = setTimeout(tick, 300);
-        }
-      }
-    };
-
-    timeoutId = setTimeout(tick, 800);
-    return () => { active = false; clearTimeout(timeoutId); };
+    const cards = document.querySelectorAll<HTMLElement>('.metric-card');
+    cards.forEach((el, i) => {
+      el.style.setProperty('--card-delay', `${i * 80}ms`);
+    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    cards.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   const handleScrollToEnroll = () => {
@@ -246,26 +232,17 @@ function App() {
               <p className="about-promise">
                 Vou te mostrar como <span className="highlight-yellow">lucrar + de R$10 mil por mês</span> trabalhando no conforto da sua casa, sem ter que investir e com risco zero.
               </p>
-              <button
-                className="cta-button about-section-cta"
-                onClick={handleScrollToEnroll}
-                aria-label="Quero fazer parte do time !!!"
-              >
-                <span className="typing-wrapper" aria-hidden="true">
-                  <span className="typing-sizer">Quero fazer parte do time !!!</span>
-                  <span className="typing-live">
-                    {typingText}<span className="typing-cursor">|</span>
-                  </span>
-                </span>
-              </button>
+              <TypingCTAButton onScroll={handleScrollToEnroll} />
             </div>
             
             <div className="about-image">
               <div className="image-wrapper">
-                <img 
-                  src="/photosec2.webp" 
+                <img
+                  src="/photosec2.webp"
                   alt="Dudecamp - Formação HTML + CSS"
                   loading="lazy"
+                  width="1024"
+                  height="1024"
                 />
                 <div className="dev-text-overlay">Você DEV.</div>
               </div>
@@ -277,8 +254,8 @@ function App() {
       <section id="metrics" className="metrics">
         <div className="container">
           <div className="metrics-grid">
-            {metricsData.map((metric, index) => (
-              <div key={index} className="metric-card">
+            {metricsData.map((metric) => (
+              <div key={metric.headline} className="metric-card">
                 <span className="metric-emoji">{metric.emoji}</span>
                 <span className="metric-headline">{metric.headline}</span>
                 <p className="metric-legend">{metric.legend}</p>
@@ -295,9 +272,9 @@ function App() {
               <p>Tudo que você precisa para dominar <span className="html-color">HTML</span> + <span className="css-color">CSS</span></p>
             </div>
             <div className="features-grid">
-              {featuresData.map((feature, index) => (
+              {featuresData.map((feature) => (
                 <SpotlightCard
-                  key={index}
+                  key={feature.title}
                   title={feature.title}
                   titleColor={feature.titleColor}
                   description={feature.description}
@@ -545,7 +522,7 @@ function App() {
 
             <div className="installment-highlight">
               <span className="installment-label">ou em</span>
-              <span className="installment-value">10x <span className="installment-conjunction">de</span> R$ 7,50</span>
+              <span className="installment-value">10x <span className="installment-conjunction">de</span> R$ 7,90</span>
               <span className="installment-badge">SEM JUROS</span>
             </div>
           </div>

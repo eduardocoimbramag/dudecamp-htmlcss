@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import type { MouseEvent } from 'react';
 import './SpotlightCard.css';
 
@@ -10,16 +10,20 @@ interface SpotlightCardProps {
 
 function SpotlightCard({ title, titleColor, description }: SpotlightCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const rafPendingRef = useRef(false);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    setMousePosition({ x, y });
+    const card = cardRef.current;
+    if (!card || rafPendingRef.current) return;
+    rafPendingRef.current = true;
+    const cx = e.clientX;
+    const cy = e.clientY;
+    requestAnimationFrame(() => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', `${cx - rect.left}px`);
+      card.style.setProperty('--mouse-y', `${cy - rect.top}px`);
+      rafPendingRef.current = false;
+    });
   };
 
   return (
@@ -27,10 +31,6 @@ function SpotlightCard({ title, titleColor, description }: SpotlightCardProps) {
       ref={cardRef}
       className="spotlight-card"
       onMouseMove={handleMouseMove}
-      style={{
-        '--mouse-x': `${mousePosition.x}px`,
-        '--mouse-y': `${mousePosition.y}px`,
-      } as React.CSSProperties}
     >
       <div className="spotlight-card-border"></div>
       <div className="spotlight-card-content">
