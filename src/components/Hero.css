@@ -56,11 +56,24 @@
   margin-bottom: 2rem;
 }
 
+@keyframes logo-glow-breathe {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 8px rgba(255, 214, 0, 0.10))
+      drop-shadow(0 2px 18px rgba(255, 214, 0, 0.14));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 14px rgba(255, 214, 0, 0.22))
+      drop-shadow(0 4px 32px rgba(255, 214, 0, 0.18));
+  }
+}
+
 .hero-logo {
   width: clamp(150px, 20vw, 210px);
   height: auto;
   display: block;
-  filter: drop-shadow(0 0 28px rgba(255, 214, 0, 0.22));
+  animation: logo-glow-breathe 4s ease-in-out infinite;
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -76,7 +89,7 @@
   line-height: 1.8;
   letter-spacing: 0.012em;
   max-width: 500px;
-  margin: 0 0 2.25rem;
+  margin: 0 0 1.125rem;
   padding: 0.5rem 0.875rem;
   border-radius: 6px;
   display: inline-block;
@@ -213,7 +226,7 @@
 
   .hero-subtitle {
     font-size: clamp(0.9375rem, 2.2vw, 1.125rem);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     max-width: 440px;
   }
 
@@ -249,7 +262,7 @@
   .hero-subtitle {
     font-size: 0.9375rem;
     line-height: 1.7;
-    margin-bottom: 1.75rem;
+    margin-bottom: 0.875rem;
     padding: 0.375rem 0.625rem;
     max-width: 100%;
   }

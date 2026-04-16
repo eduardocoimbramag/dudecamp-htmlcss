@@ -52,7 +52,7 @@ function Hero() {
         <div className="hero-content">
           <div className="hero-logo-wrap">
             <img
-              src="/Dudecamp.png"
+              src="/LogoPalletPNG.png"
               alt="Dudecamp"
               className="hero-logo"
               draggable={false}
@@ -60,7 +60,7 @@ function Hero() {
           </div>
 
           <p className="hero-subtitle cursor-target">
-            Aprenda HTML + CSS do zero e construa projetos com visual profissional.
+            Aprenda <span className="html-color">HTML</span> + <span className="css-color">CSS</span> do zero e construa projetos com visual profissional.
           </p>
 
           <div className="hero-cta-group">

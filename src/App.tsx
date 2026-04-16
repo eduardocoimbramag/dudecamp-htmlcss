@@ -55,10 +55,9 @@ function App() {
     { id: 'features', label: 'Recursos' },
     { id: 'content', label: 'Conteúdo' },
     { id: 'certificate', label: 'Certificado' },
-    { id: 'enroll', label: 'Inscrever-se' },
     { id: 'instructors', label: 'Instrutores' },
     { id: 'faq', label: 'Dúvidas' },
-    { id: 'footer', label: 'Contato' },
+    { id: 'enroll', label: 'Inscrever-se' },
   ];
 
   const instructorsData = [
@@ -373,6 +372,59 @@ function App() {
         </div>
       </section>
 
+      <section id="instructors" className="instructors">
+        <div className="container">
+          <div className="instructors-header">
+            <h2>Instrutores</h2>
+            <p>Aprenda com profissionais que dominam e ensinam <span className="html-color">HTML</span> + <span className="css-color">CSS</span> do zero ao avançado.</p>
+          </div>
+
+          <div className="instructor-list">
+            {instructorsData.map((instructor, index) => (
+              <div key={index} className="instructor-card">
+                <div className="instructor-info">
+                  <h3 className="instructor-name">{instructor.name}</h3>
+                  <p className="instructor-role">{instructor.role}</p>
+                  <p className="instructor-bio">{instructor.bio}</p>
+                </div>
+                <div className="instructor-photo-wrapper">
+                  <CircularText
+                    text={instructor.circularText}
+                    spinDuration={20}
+                    onHover="speedUp"
+                    className="instructor-circular-text"
+                  />
+                  <img
+                    src={instructor.imageSrc}
+                    alt={instructor.imageAlt}
+                    className="instructor-photo"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="faq">
+        <div className="container">
+          <div className="faq-header">
+            <h2>Dúvidas frequentes</h2>
+            <p>Tire suas dúvidas antes de começar sua jornada</p>
+          </div>
+
+          <div className="faq-list">
+            {faqData.map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="enroll" className="enroll">
         <div className="container">
           <div className="enroll-header">
@@ -519,59 +571,6 @@ function App() {
                 <div className="guarantee-stars">★★★★★</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="instructors" className="instructors">
-        <div className="container">
-          <div className="instructors-header">
-            <h2>Instrutores</h2>
-            <p>Aprenda com profissionais que dominam e ensinam <span className="html-color">HTML</span> + <span className="css-color">CSS</span> do zero ao avançado.</p>
-          </div>
-
-          <div className="instructor-list">
-            {instructorsData.map((instructor, index) => (
-              <div key={index} className="instructor-card">
-                <div className="instructor-info">
-                  <h3 className="instructor-name">{instructor.name}</h3>
-                  <p className="instructor-role">{instructor.role}</p>
-                  <p className="instructor-bio">{instructor.bio}</p>
-                </div>
-                <div className="instructor-photo-wrapper">
-                  <CircularText
-                    text={instructor.circularText}
-                    spinDuration={20}
-                    onHover="speedUp"
-                    className="instructor-circular-text"
-                  />
-                  <img
-                    src={instructor.imageSrc}
-                    alt={instructor.imageAlt}
-                    className="instructor-photo"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="faq" className="faq">
-        <div className="container">
-          <div className="faq-header">
-            <h2>Dúvidas frequentes</h2>
-            <p>Tire suas dúvidas antes de começar sua jornada</p>
-          </div>
-
-          <div className="faq-list">
-            {faqData.map((faq, index) => (
-              <FaqItem
-                key={index}
-                question={faq.question}
-                answer={faq.answer}
-              />
-            ))}
           </div>
         </div>
       </section>
