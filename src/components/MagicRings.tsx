@@ -9,8 +9,9 @@ void main() {
 `;
 
 const fragmentShader = `
-precision highp float;
-uniform float uTime, uAttenuation, uLineThickness;
+precision mediump float;
+uniform highp float uTime;
+uniform float uAttenuation, uLineThickness;
 uniform float uBaseRadius, uRadiusStep, uScaleRate;
 uniform float uOpacity, uNoiseAmount, uRotation, uRingGap;
 uniform float uFadeIn, uFadeOut;
@@ -235,8 +236,21 @@ export default function MagicRings({
     mount.addEventListener('click', onClick);
 
     let frameId: number;
+    let running = false;
+
+    const startLoop = () => {
+      if (running) return;
+      running = true;
+      frameId = requestAnimationFrame(animate);
+    };
+
+    const stopLoop = () => {
+      running = false;
+      cancelAnimationFrame(frameId);
+    };
 
     const animate = (t: number) => {
+      if (!running) return;
       frameId = requestAnimationFrame(animate);
       const p = propsRef.current;
 
@@ -254,10 +268,23 @@ export default function MagicRings({
       renderer.render(scene, camera);
     };
 
-    frameId = requestAnimationFrame(animate);
+    const onVisibilityChange = () => {
+      document.hidden ? stopLoop() : startLoop();
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    const io = new IntersectionObserver(
+      ([entry]) => { entry.isIntersecting ? startLoop() : stopLoop(); },
+      { threshold: 0 }
+    );
+    io.observe(mount);
+
+    startLoop();
 
     return () => {
-      cancelAnimationFrame(frameId);
+      stopLoop();
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      io.disconnect();
       window.removeEventListener('resize', resize);
       ro.disconnect();
       mount.removeEventListener('mousemove', onMouseMove);

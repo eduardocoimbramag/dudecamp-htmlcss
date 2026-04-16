@@ -65,6 +65,9 @@ const TargetCursor = ({
     const container = containerRef?.current ?? null;
 
     cornersRef.current = cursor.querySelectorAll('.target-cursor-corner');
+    const cornerEls = Array.from(cornersRef.current) as HTMLElement[];
+    const setX = cornerEls.map(c => gsap.quickSetter(c, 'x', 'px'));
+    const setY = cornerEls.map(c => gsap.quickSetter(c, 'y', 'px'));
 
     let activeTarget: Element | null = null;
     let currentLeaveHandler: (() => void) | null = null;
@@ -115,42 +118,41 @@ const TargetCursor = ({
     createSpinTimeline();
 
     const tickerFn = () => {
-      if (!targetCornerPositionsRef.current || !cursorRef.current || !cornersRef.current) {
-        return;
-      }
-
+      if (!targetCornerPositionsRef.current || !cursorRef.current) return;
       const strength = activeStrengthRef.current;
       if (strength === 0) return;
-
       const cursorX = gsap.getProperty(cursorRef.current, 'x') as number;
       const cursorY = gsap.getProperty(cursorRef.current, 'y') as number;
-
-      const corners = Array.from(cornersRef.current) as HTMLElement[];
-      corners.forEach((corner, i) => {
-        const currentX = gsap.getProperty(corner, 'x') as number;
-        const currentY = gsap.getProperty(corner, 'y') as number;
-
-        const targetX = targetCornerPositionsRef.current![i].x - cursorX;
-        const targetY = targetCornerPositionsRef.current![i].y - cursorY;
-
-        const finalX = currentX + (targetX - currentX) * strength;
-        const finalY = currentY + (targetY - currentY) * strength;
-
-        const duration = strength >= 0.99 ? (parallaxOn ? 0.2 : 0) : 0.05;
-
-        gsap.to(corner, {
-          x: finalX,
-          y: finalY,
-          duration: duration,
-          ease: duration === 0 ? 'none' : 'power1.out',
-          overwrite: 'auto',
-        });
-      });
+      for (let i = 0; i < cornerEls.length; i++) {
+        const currentX = gsap.getProperty(cornerEls[i], 'x') as number;
+        const currentY = gsap.getProperty(cornerEls[i], 'y') as number;
+        const finalX = currentX + (targetCornerPositionsRef.current![i].x - cursorX - currentX) * strength;
+        const finalY = currentY + (targetCornerPositionsRef.current![i].y - cursorY - currentY) * strength;
+        if (strength >= 0.99 && parallaxOn) {
+          gsap.to(cornerEls[i], { x: finalX, y: finalY, duration: 0.2, ease: 'power1.out', overwrite: 'auto' });
+        } else {
+          setX[i](finalX);
+          setY[i](finalY);
+        }
+      }
     };
 
     tickerFnRef.current = tickerFn;
 
-    const moveHandler = (e: MouseEvent) => moveCursor(e.clientX, e.clientY);
+    let pendingX = 0;
+    let pendingY = 0;
+    let rafPending = false;
+    const moveHandler = (e: MouseEvent) => {
+      pendingX = e.clientX;
+      pendingY = e.clientY;
+      if (!rafPending) {
+        rafPending = true;
+        requestAnimationFrame(() => {
+          moveCursor(pendingX, pendingY);
+          rafPending = false;
+        });
+      }
+    };
     window.addEventListener('mousemove', moveHandler);
 
     const scrollHandler = () => {
